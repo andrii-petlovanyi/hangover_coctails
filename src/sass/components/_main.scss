@@ -5,13 +5,56 @@
   gap: 32px;
 }
 .main-title {
+  margin-top: 740px;
   display: flex;
-  align-items: center;
   font-family: 'Poppins';
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 1.5;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.9;
   text-align: center;
-  align-items: center;
+  justify-content: center;
   color: $primary-text-color;
+  @media screen and (min-width: 479.9px) {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.31;
+  }
+  @media screen and (min-width: 767.9px) {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.5;
+  }
+}
+.coctail-card {
+  max-width: 395px;
+  height: 556px;
+}
+.coctail-card__name {
+  display: block;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.6;
+  text-align: center;
+  justify-content: center;
+  color: $primary-text-color;
+  @media screen and (min-width: 479.9px) {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.18;
+  }
+  @media screen and (min-width: 767.9px) {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.19;
+  }
+}
+.button-learn_more {
+  width: 108px;
+  height: 39px;
+  background-color: FFFFFF;
+}
+.button-add_to {
+  width: 108px;
+  height: 39px;
 }
