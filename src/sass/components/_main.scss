@@ -1,0 +1,17 @@
+.coctails-list {
+  margin: 60px, 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.main-title {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  color: $primary-text-color;
+}
