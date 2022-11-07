@@ -1,0 +1,147 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(94, 99, 99, 0.7);
+
+  z-index: 3;
+  opacity: 1;
+  overflow-y: scroll;
+  transition: opacity 250ms $cubic;
+}
+
+.backdrop.is__hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  .backdrop.is__hidden & {
+    transform: translate(-50%, -50%) scale(2) rotate(2turn);
+    opacity: 0;
+  }
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  opacity: 1;
+
+  font-family: 'Popins';
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 722px;
+    height: 498px;
+
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+  }
+  @media screen and (orientation: landscape) and (max-height: 458px) {
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+  @media screen and (min-width: $desktop) {
+    width: 822px;
+    height: 598px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 500ms $cubic, opacity 500ms $cubic;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.coctail {
+  font-family: 'Roboto';
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.17;
+}
+
+.coctail__instruction {
+  margin-top: 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+.coctail__description {
+  margin-top: 20px;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.coctail__img {
+  margin-top: 15px;
+}
+
+.ingredients {
+  margin-top: 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ingredients__denominator {
+  margin: 8px 0;
+
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.ingredients__list {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.button {
+  display: block;
+  margin-top: 32px;
+}
+
+.modal__button--favorite {
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 1.2;
+
+  width: 185px;
+  height: 48px;
+  background-color: $accent-mod-text-color;
+  border-color: transparent;
+  color: $primary-white-color;
+}
+
+.modal__button--remove {
+  font-family: 'Roboto';
+  font-size: 20px;
+  line-height: 1.2;
+
+  width: 248px;
+  height: 48px;
+  background-color: $accent-mod-text-color;
+  border-color: transparent;
+  color: $primary-white-color;
+}
