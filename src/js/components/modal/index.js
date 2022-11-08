@@ -2,7 +2,7 @@ import { getCoctById } from '../../api';
 import { FAV_COCKTAIL } from '../favourites/fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 
-const ingrList = [];
+let ingrList = [];
 
 export async function searchCoctById(id) {
   try {
@@ -72,4 +72,5 @@ function closeModal(e) {
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
   document.querySelector('.backdrop').remove();
+  ingrList = [];
 }
