@@ -1,11 +1,12 @@
-import {getCoctByFirstLet} from './js/api/index'
+import {getCoctByFirstLet} from '../../api'
+import {notFound} from '../error'
 
 const FAV_COCKTAIL = 'favourites_coctails';
 
 export const lettersListRef = document.querySelector(`.hero__list`);
 
 
-lettersListRef.addEventListener(`click`,chooseLetter)
+
 
 
 export function chooseLetter(evt){
@@ -22,12 +23,16 @@ addActiveLetterClass(parentRef);
 
 const choosedLetter = activeLetter.textContent;
 
-test(choosedLetter)
+addMarkup(choosedLetter)
 
 }
-async function test (letter){
+async function addMarkup (letter){
     try {
         const {data}= await getCoctByFirstLet(letter)
+        if (!data.drinks){
+          console.log(data.drinks)
+           return renderError(notFound)
+        }
         console.log(data.drinks)
         renderMarkup(data.drinks)
         
@@ -85,5 +90,10 @@ function renderMarkup(data = []) {
     document
       .querySelector(`.coctails-list`)
       .innerHTML= mark;
+  }
+  function renderError(markup){
+    document
+      .querySelector(`.coctails-list`)
+      .innerHTML= markup;
   }
 

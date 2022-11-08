@@ -1,6 +1,7 @@
 import { getListCard } from './js/components/main';
 import { searchCoctById } from './js/components/modal';
 import { btnAddFav } from './js/components/favourites/fav_cocktails';
+import {lettersListRef, chooseLetter} from './js/components/hero/search-Letters'
 //
 
 getListCard();
@@ -13,7 +14,7 @@ function btnLearnMore(e) {
   if (e.target.dataset.add) btnAddFav(e.target.dataset.favid);
 }
 
-
+lettersListRef.addEventListener(`click`,chooseLetter)
 
 
 
