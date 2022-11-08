@@ -38,6 +38,7 @@
   }
 }
 .coctail-card {
+  position: relative;
   margin: auto;
   width: 280px;
   height: 449px;
@@ -66,31 +67,48 @@
     height: 395px;
   }
 }
-.coctail-card__options,
+.coctail-card__options {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  @media screen and (min-width: 767.9px) {
+    
+    margin-bottom: 19px;
+  }
+  @media screen and (min-width: 1279.9px) {
+    margin-bottom: 32px;
+    
+  }
+}
+
 .ingredients-card__options {
   display: flex;
   justify-content: center;
 }
 .coctail-card__name,
 .ingredients__name {
-  margin-top: 48px;
-  margin-bottom: 16px;
-  display: block;
+  height: 106px;
+   display: flex;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6;
   text-align: center;
+  align-items: center;
   justify-content: center;
   color: $primary-text-color;
   @media screen and (min-width: 767.9px) {
-    margin-top: 20px;
-    margin-bottom: 25px;
+    height: 78px;
     font-weight: 900;
     font-size: 28px;
     line-height: 1.18;
   }
   @media screen and (min-width: 1279.9px) {
-    margin-bottom: 27px;
+    height: 85px;
     font-weight: 900;
     font-size: 32px;
     line-height: 1.19;
