@@ -17,11 +17,10 @@ if (!isLetter){
 console.log(isLetter)
 const activeLetter = evt.target;
 const parentRef = activeLetter.closest(`.hero__item`);
-const currentActiveLetter = document.querySelector(`.letter__is-active`);
 removeActiveLetterClass();
 addActiveLetterClass(parentRef);
 
-const choosedLetter = currentActiveLetter.textContent;
+const choosedLetter = activeLetter.textContent;
 
 test(choosedLetter)
 
@@ -43,7 +42,7 @@ function removeActiveLetterClass(){
     if(currentActiveLetter) {
         currentActiveLetter.classList.remove(`letter__is-active`);
     }
-    // lettersListRef.innerHTML(``)
+    
 
 }
 function addActiveLetterClass(letter){
@@ -87,3 +86,4 @@ function renderMarkup(data = []) {
       .querySelector(`.coctails-list`)
       .innerHTML= mark;
   }
+
