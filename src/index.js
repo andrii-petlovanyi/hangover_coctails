@@ -46,3 +46,4 @@ function renderMarkup(data = []) {
 }
 
 getListCard();
+
