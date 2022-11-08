@@ -1,4 +1,5 @@
 import { getCoctById } from '../../api';
+import { FAV_COCKTAIL } from '../favourites/fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 
 const ingrList = [];
@@ -29,7 +30,10 @@ function collectIngr(newArr) {
 }
 
 function renderMarkup(data, ingredients) {
+  const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
   const { strDrink, strDrinkThumb, strInstructions } = data;
+  const isFav = actArr.find(item => item.strDrink === strDrink);
+  const btn = isFav ? 'Remove from favorite' : 'Add to favorite';
   const markup = `
 <div class="backdrop">
   <div class="modal">
@@ -53,18 +57,10 @@ function renderMarkup(data, ingredients) {
     <button
       type="button"
       class="button modal__button--favorite"
-      aria-label="Add to favorite"
+      aria-label="${btn}"
     >
-      Add to favorite
+      ${btn}
     </button>
-
-    <!-- <button
-      type="button"
-      class="button modal__button--remove"
-      aria-label="Remove from favorite"
-    >
-      Remove from favorite
-    </button> -->
   </div>
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
