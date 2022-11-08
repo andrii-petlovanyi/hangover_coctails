@@ -1,8 +1,9 @@
 import { getCoctById } from '../../api';
+import sprite from '../../../images/svg/sprite.svg';
 
 const ingrList = [];
 
-(async function searchCoctById() {
+export async function searchCoctById() {
   try {
     const { data } = await getCoctById('11007');
     collectIngr(data.drinks);
@@ -11,7 +12,7 @@ const ingrList = [];
   } catch (error) {
     console.log(error);
   }
-})();
+}
 
 function collectIngr(newArr) {
   for (let i = 1; i <= 15; i++) {
@@ -29,25 +30,25 @@ function collectIngr(newArr) {
 
 function renderMarkup(data, ingredients) {
   const { strDrink, strDrinkThumb, strInstructions } = data;
-  const markup = `<div class="backdrop ">
+  const markup = `
+<div class="backdrop">
   <div class="modal">
     <button type="button" aria-label="Close button" class="modal__close">
       <svg class="modal__icon" width="24" height="24">
-        <use href="./images/svg/clarity_close-line.svg"></use>
+        <use href="${sprite}#icon-close-burger"></use>
       </svg>
     </button>
     <h2 class="coctail">${strDrink}</h2>
     <h3 class="coctail__instruction">INSTRUCTIONS:</h3>
-    <p class="coctail__description">
-      ${strInstructions}
+    <p class="coctail__description">${strInstructions}
     </p>
     <img class="coctail__img" src=${strDrinkThumb} alt=${strDrink} />
     <h4 class="ingredients">INGREDIENTS</h4>
     <p class="ingredients__denominator">Per coctail</p>
     <ul class="ingredients__list">
-      ${ingredients
-        .map(ingr => `<li class="ingredients__items">✶ ${ingr}</li>`)
-        .join('')}
+       ${ingredients
+         .map(ingr => `<li class="ingredients__items">✶ ${ingr}</li>`)
+         .join('')}
     </ul>
     <button
       type="button"
