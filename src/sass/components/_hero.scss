@@ -12,14 +12,14 @@
 }
 
 .favorites__img {
-  margin-right: 32px;
   @media screen and (max-width: 767.99px) {
+    margin-right: 32px;
     width: 336px;
     height: 294px;
   }
   @media screen and (min-width: 768px) {
-    // width: 501px;
-    // height: 439px;
+    width: 501px;
+    height: 439px;
   }
 }
 
@@ -99,4 +99,19 @@
     line-height: 1.5;
   }
   //   text-stroke: 4px navy;
+  //   stroke="green" stroke-width="4"
+
 }
+
+// .visually-hidden {
+//     position: absolute;
+//     white-space: nowrap;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//     border: 0;
+//     padding: 0;
+//     clip: rect(0 0 0 0);
+//     clip-path: inset(50%);
+//     margin: -1px;
+// }
