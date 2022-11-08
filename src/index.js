@@ -12,3 +12,8 @@ function btnLearnMore(e) {
   if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
   if (e.target.dataset.add) btnAddFav(e.target.dataset.favid);
 }
+
+
+getListCard();
+
+
