@@ -25,7 +25,7 @@ function lengthCocktailList(arr = []) {
     return arr.splice(0, 9);
   }
 }
-function renderMarkup(data = []) {
+export function renderMarkup(data = []) {
   const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
