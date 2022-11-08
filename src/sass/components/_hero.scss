@@ -1,23 +1,24 @@
 .hero {
   display: flex;
   justify-content: space-between;
-  @media screen and (max-width: 767.99px) {
-    margin-top: 77px;
-    margin-left: 32px;
+  margin-top: 60px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 97px;
+    // margin-left: 32px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $desktop) {
     margin-top: 160px;
-    margin-left: 16px;
+    // margin-left: 16px;
   }
 }
 
 .favorites__img {
-  @media screen and (max-width: 767.99px) {
+  @media screen and (min-width: $tablet) {
     margin-right: 32px;
     width: 336px;
     height: 294px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $desktop) {
     width: 501px;
     height: 439px;
   }
@@ -26,8 +27,7 @@
 .container__hero {
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 767.99px) {
-    margin-top: 23px;
+  @media screen and (max-width: $tablet) {
   }
 }
 
@@ -36,13 +36,16 @@
   font-style: normal;
   font-weight: 600;
   color: #fd5103;
-  @media screen and (max-width: 767.99px) {
+  font-size: 22px;
+  line-height: 1.91;
+  @media screen and (min-width: $tablet) {
     font-size: 26px;
     line-height: 1.62;
     width: 336px;
     height: 84px;
+    margin-top: 23px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $desktop) {
     font-size: 52px;
     line-height: 1.54;
     width: 688px;
@@ -56,27 +59,113 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.8;
-  @media screen and (max-width: 767.99px) {
-    font-size: 14px;
-    line-height: 2;
-    //   width: 336px;
-    //   height: 84px;
-  }
-  @media screen and (min-width: 768px) {
+  margin: 40px 0;
+  font-size: 14px;
+  line-height: 2;
+  @media screen and (min-width: $desktop) {
     font-size: 18px;
     line-height: 1.56;
     color: #202025;
   }
-  margin-top: 40px;
-  margin-bottom: 40px;
+}
+
+.hero__input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 14px;
+  cursor: pointer;
+  //   position: absolute;
+  width: 93px;
+  height: 34px;
+  border: 1px solid #fd5103;
+  border-radius: 4px;
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+}
+
+.hero__svg {
+  //   display: flex;
+  //   position: absolute;
+  //   left: 64px;
+  //   top: 7px;
+  //   color: inherit;
+
+  display: flex;
+//   justify-content: center;
+//   align-items: center;
+ 
+
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+  // @media screen and (max-width: 767.99px) {
+  //     display: flex;
+  // position: absolute;
+  // }
+}
+
+.hero__input:active,
+hero__input:hover,
+hero__input:focus {
+  background: #fd5103;
+  color: #fcfcfc;
 }
 
 .hero__list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 312px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: $mobile) {
+    position: absolute;
+    border: 1px solid #fd5103;
+    border-radius: 4px;
+  }
+  @media screen and (max-width: $tablet) {
+    position: absolute;
+    width: 93px;
+    height: 84px;
+    overflow-y: auto;
+    border: 1px solid black;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 312px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 520px;
+  }
+}
+.hero__select {
+  @media screen and (max-width: 767.99px) {
+    position: relative;
+    width: 93px;
+    height: 34px;
   }
 }
 
@@ -92,26 +181,19 @@
   width: 24px;
   height: 25px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $desktop) {
     width: 40px;
     height: 40px;
     font-size: 24px;
     line-height: 1.5;
   }
   //   text-stroke: 4px navy;
-  //   stroke="green" stroke-width="4"
-
+  // stroke = "green" ;
+  // stroke-width = "4";
+}
+.letter__is-active {
+  -webkit-text-stroke: 1px #5f6775;
+  text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
+  color: #fd5103;
 }
 
-// .visually-hidden {
-//     position: absolute;
-//     white-space: nowrap;
-//     width: 1px;
-//     height: 1px;
-//     overflow: hidden;
-//     border: 0;
-//     padding: 0;
-//     clip: rect(0 0 0 0);
-//     clip-path: inset(50%);
-//     margin: -1px;
-// }
