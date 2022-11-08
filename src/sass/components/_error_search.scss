@@ -1,0 +1,40 @@
+.search-coctail__error{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .search-coctail__title{
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 22px;
+   line-height: 1.9;
+   text-align: center;
+   color: #202025;
+   margin-bottom: 60px;
+   max-width: 280px;
+   @media screen and (min-width: $tablet) {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 32px;
+   line-height: 42px;
+   text-align: center;
+   color: #202025;
+   max-width: 331px;
+   }
+   @media screen and (min-width: $desktop) {
+       font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 48px;
+   line-height: 72px;
+   text-align: center;
+   color: #202025;
+   margin-bottom: 70px;
+   max-width: 493px;
+   }
+   }

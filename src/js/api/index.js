@@ -29,6 +29,14 @@ export async function getCoctByFirstLet(letter) {
   }
 }
 
+export async function getCoctById(id) {
+  try {
+    return (response = await instance.get(`lookup.php?i=${id}`));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getIngrByName(name) {
   try {
     return (response = await instance.get(`search.php?i=${name}`));
