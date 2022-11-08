@@ -2,13 +2,13 @@ import {getCoctByFirstLet} from './js/api/index'
 
 const FAV_COCKTAIL = 'favourites_coctails';
 
-const lettersListRef = document.querySelector(`.hero__list`);
+export const lettersListRef = document.querySelector(`.hero__list`);
 
 
 lettersListRef.addEventListener(`click`,chooseLetter)
 
 
-function chooseLetter(evt){
+export function chooseLetter(evt){
 
 const isLetter = evt.target.classList.contains(`hero__item`);
 if (!isLetter){
