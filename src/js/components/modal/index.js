@@ -3,9 +3,9 @@ import sprite from '../../../images/svg/sprite.svg';
 
 const ingrList = [];
 
-export async function searchCoctById() {
+export async function searchCoctById(id) {
   try {
-    const { data } = await getCoctById('11007');
+    const { data } = await getCoctById(id);
     collectIngr(data.drinks);
     renderMarkup(...data.drinks, ingrList);
     return data;
@@ -67,5 +67,13 @@ function renderMarkup(data, ingredients) {
     </button> -->
   </div>
 </div>`;
-  document.body.innerHTML = markup;
+  document.body.insertAdjacentHTML('beforeend', markup);
+  document.querySelector('.modal__close').addEventListener('click', closeModal);
+}
+
+function closeModal(e) {
+  document
+    .querySelector('.modal__close')
+    .removeEventListener('click', closeModal);
+  document.querySelector('.backdrop').remove();
 }

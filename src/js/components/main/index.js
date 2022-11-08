@@ -31,9 +31,9 @@ function renderMarkup(data = []) {
       const isFav = actArr.find(item => item.idDrink === idDrink);
       const btn = isFav
         ? ` <button class="button-add_to" data-favid=${idDrink} data-add="add">
-          remove
+          Remove
           <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-Heart"></use>
+            <use href="${sprite}#icon-heart_full"></use>
           </svg>
         </button>`
         : ` <button class="button-add_to" data-favid=${idDrink} data-add="add">

@@ -18,7 +18,6 @@ export async function btnAddFav(id) {
       if (actArr[i].idDrink === idDrink) {
         actArr.splice(i, 1);
         localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
-        console.log(JSON.parse(localStorage.getItem(FAV_COCKTAIL)));
         test(idDrink);
         return;
       }
@@ -31,7 +30,7 @@ export async function btnAddFav(id) {
 export function addBtn(id) {
   document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Remove
           <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-Heart"></use>
+            <use href="${sprite}#icon-heart_full"></use>
           </svg>`;
 }
 export function test(id) {
