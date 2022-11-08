@@ -64,7 +64,7 @@
   }
   @media screen and (min-width: 1279.9px) {
     width: 393px;
-    height: 395px;
+    height: 375px;
   }
 }
 .coctail-card__options {
@@ -108,7 +108,7 @@
     line-height: 1.18;
   }
   @media screen and (min-width: 1279.9px) {
-    height: 85px;
+    height: 105px;
     font-weight: 900;
     font-size: 32px;
     line-height: 1.19;
@@ -126,7 +126,7 @@
   font-size: 14px;
   line-height: 1.7;
   @media screen and (min-width: 767.9px) {
-    margin-right: 12px;
+    margin-right: 20px;
     width: 160px;
     height: 48px;
     font-size: 20px;
@@ -189,11 +189,11 @@
   padding: 20px;
   border: 1px solid $accent-mod-text-color;
   border-radius: 5px;
-  @media screen and (min-width: 479.9px) {
+  @media screen and (min-width: 767.9px) {
     width: 335px;
     height: 205px;
   }
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 1279.9px) {
     padding: 28px;
     width: 395px;
     height: 221px;
@@ -214,10 +214,7 @@
   line-height: 1.5;
   text-transform: uppercase;
   color: #000000;
-  @media screen and (min-width: 479.9px) {
-    margin-top: 28px;
-    margin-bottom: 28px;
-  }
+  
   @media screen and (min-width: 767.9px) {
     margin-top: 28px;
     margin-bottom: 28px;
