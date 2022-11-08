@@ -14,6 +14,5 @@ function btnLearnMore(e) {
 }
 
 
-getListCard();
 
 
