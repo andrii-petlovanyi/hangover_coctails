@@ -3,12 +3,13 @@
   justify-content: space-between;
   margin-top: 60px;
   @media screen and (min-width: $tablet) {
-    margin-top: 97px;
+    margin-top: 51px;
     // margin-left: 32px;
   }
   @media screen and (min-width: $desktop) {
-    margin-top: 160px;
+    // margin-top: 160px;
     // margin-left: 16px;
+    margin-top: 97px;
   }
 }
 
