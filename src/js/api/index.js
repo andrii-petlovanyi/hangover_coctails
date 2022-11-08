@@ -8,6 +8,7 @@ const instance = axios.create({
 export async function getRandCoctList() {
   try {
     return (response = await instance.get('randomselection.php'));
+    console.log(response);
   } catch (error) {
     console.log(error);
   }
