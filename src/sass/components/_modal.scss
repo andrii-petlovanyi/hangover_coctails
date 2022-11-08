@@ -183,20 +183,21 @@
 .button {
   display: block;
   margin-top: 32px;
-}
 
-.modal__button--favorite {
   font-family: 'Roboto';
   font-size: 20px;
   line-height: 1.2;
 
-  width: 185px;
-  height: 48px;
   background-color: $accent-mod-text-color;
   border-color: transparent;
   color: $primary-white-color;
 
   border-radius: 5px;
+}
+
+.modal__button--favorite {
+  width: 185px;
+  height: 48px;
 
   @media screen and (min-width: $tablet) {
     order: +2;
@@ -211,17 +212,8 @@
 }
 
 .modal__button--remove {
-  font-family: 'Roboto';
-  font-size: 20px;
-  line-height: 1.2;
-
   width: 248px;
   height: 48px;
-  background-color: $accent-mod-text-color;
-  border-color: transparent;
-  color: $primary-white-color;
-
-  border-radius: 5px;
 
   @media screen and (min-width: $tablet) {
     order: +2;
