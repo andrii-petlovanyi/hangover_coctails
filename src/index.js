@@ -1,6 +1,4 @@
 import { getListCard, cardBtnListenr } from './js/components/main';
-import { searchCoctById } from './js/components/modal';
-import { btnAddFav } from './js/components/favourites/fav_cocktails';
 import {
   lettersListRef,
   chooseLetter,

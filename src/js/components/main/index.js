@@ -21,7 +21,6 @@ function lengthCocktailList(arr = []) {
   ) {
     return arr.splice(0, 6);
   } else if (document.body.clientWidth > 1280) {
-    console.log(document.body.clientWidth);
     return arr.splice(0, 9);
   }
 }
