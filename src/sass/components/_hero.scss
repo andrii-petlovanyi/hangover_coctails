@@ -22,7 +22,7 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  color: #fd5103;
+  color: $accent-mod-text-color;
   font-size: 22px;
   line-height: 1.91;
   display: flex;
@@ -86,7 +86,7 @@
 
   width: 93px;
   height: 34px;
-  border: 1px solid #fd5103;
+  border: 1px solid $accent-mod-text-color;
   border-radius: 4px;
 
   @media screen and (min-width: $tablet) {
@@ -112,7 +112,6 @@
     position: absolute;
     top: 7px;
     left: 5px;
-    // color: inherit;
   }
 }
 
@@ -120,10 +119,7 @@
   @media screen and (max-width: $mobile) {
     display: flex;
     flex-direction: column;
-    // border: 1px solid #fd5103;
-    // border-radius: 4px;
-    // scrollbar-color: #fd5103;
-    
+
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -136,9 +132,9 @@
     }
   }
   @media screen and (max-width: $tablet) {
-    scrollbar-color: #fd5103;
-    scrollbar-width: 1px;
-    border: 1px solid #fd5103;
+    scrollbar-color: $accent-mod-text-color;
+    // scrollbar-width: 1px;
+    border: 1px solid $accent-mod-text-color;
     border-radius: 4px;
     width: 93px;
     height: 84px;
@@ -173,17 +169,18 @@
 }
 
 .hero__list:active {
-  background: #fd5103;
-  color: #fcfcfc;
+  @media screen and (max-width: $tablet) {
+    color: #fcfcfc;
+  }
 }
 
 .hero__svg {
-  z-index: 999;
+  z-index: 9;
   fill: currentColor;
 
   &:focus,
   &:hover {
-    background: #FD5103;
+    background: $accent-mod-text-color;
     color: #fcfcfc;
   }
   @media screen and (min-width: $tablet) {
@@ -207,11 +204,12 @@
     width: 93px;
     height: 34px;
     position: relative;
-    :active{
-      background-color: #FD5103;
+    :active,
+    &:focus,
+    &:hover {
+      background-color: $accent-mod-text-color;
       border-radius: 4px;
       color: #fcfcfc;
-      
     }
   }
 }
@@ -224,7 +222,7 @@
   line-height: 1.5;
   align-items: center;
   text-align: center;
-  color: #5f6775;
+  color: $primary-mod-text-color;
 
   &:hover,
   &:focus {
@@ -255,10 +253,10 @@
 }
 
 .letter__is-active {
-  @media screen and (min-width: $desktop) {
-    -webkit-text-stroke: 1px #5f6775;
+  @media screen and (min-width: $tablet) {
+    -webkit-text-stroke: 1px $primary-mod-text-color;
     text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
-    color: #fd5103;
+    color: $accent-mod-text-color;
   }
 }
 
@@ -281,7 +279,6 @@
   }
 }
 
-.active{
+.active {
   margin-bottom: 80px;
 }
-
