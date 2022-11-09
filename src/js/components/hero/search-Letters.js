@@ -16,6 +16,8 @@ export function chooseLetter(evt) {
   addActiveLetterClass(parentRef);
 
   const choosedLetter = activeLetter.textContent;
+  const spanEl = document.querySelector(`.hero__js-letter`);
+  spanEl.innerHTML = choosedLetter;
 
   addMarkup(choosedLetter);
 }
