@@ -280,5 +280,24 @@
 }
 
 .active {
+  @media screen and (max-width: 767.99px) {
   margin-bottom: 80px;
+  }
+}
+
+.hero__select {
+  @media screen and (max-width: 767.99px) {
+    display: flex;
+    margin: auto;
+    width: 93px;
+    height: 34px;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      background-color: $accent-mod-text-color;
+      border-radius: 4px;
+      color: #fcfcfc;
+    }
+  }
 }
