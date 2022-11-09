@@ -1,2 +1,0 @@
-document.querySelector(".favorite__link").addEventListener("click",(function(){document.querySelector(".favorite__bar").classList.toggle("active")})),document.querySelector(".menu__icon").addEventListener("click",(function(){document.querySelector(".mobile__menu").classList.toggle("open"),document.body.classList.toggle("overflow")})),document.querySelector(".menu__close").addEventListener("click",(function(){document.querySelector(".mobile__menu").classList.toggle("open"),document.body.classList.toggle("overflow")}));
-//# sourceMappingURL=f_ingredients.b4d2bff9.js.map
