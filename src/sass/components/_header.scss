@@ -26,6 +26,17 @@
   }
 }
 
+.input__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 30px;
+  background-color: transparent;
+  border: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
 .menu__box {
   display: flex;
   justify-content: space-between;
@@ -187,7 +198,7 @@ flex-direction: column;
       opacity: 1;
       transition-duration: 2300ms;
       top: 60px;
-      left: 320px;
+      left: 490px;
     }
 }
 
