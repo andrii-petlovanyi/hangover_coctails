@@ -89,6 +89,7 @@ export function closeModal(e) {
   ingrNameList = [];
 }
 
-export function modalBtnListener(e) {
-  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
+export async function modalBtnListener(e) {
+  if (e.target.dataset.add)
+    return await btnAddFav(e.target.dataset.favid, 'modal');
 }

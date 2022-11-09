@@ -71,6 +71,6 @@ function closeModalIngr() {
   document.querySelector('.backdrop--ingredient').remove();
 }
 
-function addToFavIngr(e) {
-  addBtnFavIngr(e.target.dataset.name);
+async function addToFavIngr(e) {
+  return await addBtnFavIngr(e.target.dataset.name);
 }

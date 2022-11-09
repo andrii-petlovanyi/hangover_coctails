@@ -55,7 +55,7 @@ export function renderMarkup(data = []) {
   document.querySelector('.coctails-list').innerHTML = mark;
 }
 
-export function cardBtnListenr(e) {
-  if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
-  if (e.target.dataset.add) btnAddFav(e.target.dataset.favid);
+export async function cardBtnListenr(e) {
+  if (e.target.dataset.type) return await searchCoctById(e.target.dataset.id);
+  if (e.target.dataset.add) return await btnAddFav(e.target.dataset.favid);
 }
