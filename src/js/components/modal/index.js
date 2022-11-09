@@ -1,9 +1,11 @@
 import { getCoctById } from '../../api';
 import { cardBtnListenr } from '../main';
 import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
+import { onClickIngr } from './modalIngr';
 import sprite from '../../../images/svg/sprite.svg';
 
 let ingrList = [];
+let ingrNameList = [];
 
 export async function searchCoctById(id) {
   try {
@@ -19,6 +21,7 @@ export async function searchCoctById(id) {
 function collectIngr(newArr) {
   for (let i = 1; i <= 15; i++) {
     if (newArr[0][`strIngredient` + i] === null) return;
+    ingrNameList.push(newArr[0][`strIngredient` + i]);
 
     if (newArr[0]['strMeasure' + i] === null) {
       return ingrList.push(newArr[0][`strIngredient` + i]);
@@ -52,7 +55,10 @@ function renderMarkup(data, ingredients) {
     <p class="ingredients__denominator">Per coctail</p>
     <ul class="ingredients__list">
        ${ingredients
-         .map(ingr => `<li class="ingredients__items">✶ ${ingr}</li>`)
+         .map(
+           (ingr, ind) =>
+             `<li class="ingredients__items" data-name="${ingrNameList[ind]}">✶ ${ingr}</li>`
+         )
          .join('')}
     </ul>
     <button
@@ -68,6 +74,9 @@ function renderMarkup(data, ingredients) {
   document.body.insertAdjacentHTML('beforeend', markup);
   document.querySelector('.modal__close').addEventListener('click', closeModal);
   document.querySelector('.modal').addEventListener('click', modalBtnListener);
+  document
+    .querySelector('.ingredients__list')
+    .addEventListener('click', onClickIngr);
 }
 
 function closeModal(e) {
@@ -82,4 +91,3 @@ function closeModal(e) {
 export function modalBtnListener(e) {
   if (e.target.dataset.add) btnAddFav(e.target.dataset.favid, 'modal');
 }
-

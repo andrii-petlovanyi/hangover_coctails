@@ -1,4 +1,5 @@
 import { FAV_INGREDIENTS } from './fav_ingredients';
+import sprite from '../../../../images/svg/sprite.svg';
 
 const refIngrList = document.querySelector('.ingredients-list');
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
@@ -20,7 +21,7 @@ function renderMarkup(data = []) {
             <button class="button-remove">
               Remove
               <svg class="heart-icon" width="18" height="18">
-                <use href="./images/svg/sprite.svg#icon-Heart"></use>
+                <use href="${sprite}#icon-heart_full"></use>
               </svg>
             </button>
           </div>
