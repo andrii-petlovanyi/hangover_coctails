@@ -21,8 +21,8 @@
       right: 250px;
     }
   }
-  @media screen and(min-width: $desktop){
-  margin-right: 170px;
+  @media screen and(min-width: $desktop) {
+    margin-right: 170px;
   }
 }
 
@@ -46,12 +46,12 @@
 
 .menu__logo {
   display: none;
-  @media screen and (min-width:$tablet) {
-  display: block;
+  @media screen and (min-width: $tablet) {
+    display: block;
   }
 }
 
-.mobile__menu{
+.mobile__menu {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -67,7 +67,7 @@
   padding-left: 20px;
   padding-top: 22px;
   transition-duration: 2300ms;
-  &.open{
+  &.open {
     display: block;
     visibility: visible;
     opacity: 1;
@@ -92,7 +92,6 @@
   left: 12px;
 }
 
-
 .menu__input {
   display: flex;
   align-items: center;
@@ -101,36 +100,35 @@
   position: relative;
   width: auto;
   &::after {
-      position: absolute;
-      content: '';
-      width: 1px;
-      height: 39px;
-      background-color: #fd5103;
-      top: 0;
-      left: 40px;
-    }
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 39px;
+    background-color: #fd5103;
+    top: 0;
+    left: 40px;
+  }
   @media screen and(min-width: $tablet) {
     display: none;
   }
 }
-
 
 .finder__box {
   width: 100%;
 }
 
 .cocktail__finder {
-width: 100%;
-height: 40px;
-border: 1px solid #fd5103;
-border-radius: 4px;
-padding-left: 50px;
-caret-color: #5f6775;
-display: flex;
-flex-direction: column;
-&::placeholder {
-  color: #5f6775;
-}
+  width: 100%;
+  height: 40px;
+  border: 1px solid #fd5103;
+  border-radius: 4px;
+  padding-left: 50px;
+  caret-color: #5f6775;
+  display: flex;
+  flex-direction: column;
+  &::placeholder {
+    color: #5f6775;
+  }
 }
 
 .menu__list {
@@ -138,7 +136,7 @@ flex-direction: column;
   flex-direction: column;
   gap: 32px;
   @media screen and(min-width: $tablet) {
-  align-items: center;
+    align-items: center;
   }
 }
 
@@ -167,14 +165,14 @@ flex-direction: column;
 }
 
 .nav__burger {
-  @media screen and(min-width: $desktop){
+  @media screen and(min-width: $desktop) {
     display: none;
   }
 }
 
 .nav__desktop {
   display: none;
-  @media screen and(min-width: $desktop){
+  @media screen and(min-width: $desktop) {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -193,21 +191,21 @@ flex-direction: column;
   position: absolute;
   z-index: 2;
   &.active {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-      transition-duration: 2300ms;
-      top: 60px;
-      left: 490px;
-    }
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 2300ms;
+    top: 60px;
+    left: 490px;
+  }
 }
 
-.home__link, .favorite__link {
+.home__link,
+.favorite__link {
   font-family: poppins;
   font-size: 18px;
   line-height: 1.3;
 }
-
 
 .cocktails__item {
   display: flex;
@@ -215,8 +213,8 @@ flex-direction: column;
   justify-content: center;
   background-color: white;
   font-family: poppins;
-    font-size: 18px;
-    line-height: 1.3;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
 .ingredients__item {
@@ -226,8 +224,8 @@ flex-direction: column;
   background-color: #fd5103;
   color: white;
   font-family: poppins;
-    font-size: 18px;
-    line-height: 1.3;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
 .cocktails__link {
@@ -245,4 +243,81 @@ flex-direction: column;
 
 .overflow {
   overflow: hidden;
+}
+
+// SWITCHER
+
+.switcher {
+  display: flex;
+}
+
+[data-theme='dark'] {
+  background-color: black;
+  color: white;
+}
+
+$switch-width: 64px;
+$switch-height: 32px;
+$switch-padding: 3px;
+
+$switch-animation-duration: 1s;
+
+.switch {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  position: relative;
+  width: $switch-width;
+  height: $switch-height;
+  border-radius: 50em;
+  padding: $switch-padding 0;
+}
+
+.switch__input,
+.switch__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.switch__input {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+
+  &:checked + .switch__label {
+    background-color: $accent-mod-text-color;
+  }
+
+  &:checked + .switch__label + .switch__marker {
+    left: calc(100% - $switch-height + $switch-padding);
+  }
+}
+
+.switch__label {
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: $primary-mod-text-color;
+  border-radius: inherit;
+  z-index: 1;
+  transition: background $switch-animation-duration;
+}
+
+.switch__marker {
+  position: relative;
+  background-color: white;
+  width: calc($switch-height - $switch-padding * 2);
+  height: calc($switch-height - $switch-padding * 2);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.25);
+  left: $switch-padding;
+  transition: left $switch-animation-duration;
+  will-change: left;
 }
