@@ -76,7 +76,7 @@ function renderMarkupModal(data, ingredients) {
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
   document.querySelector('.modal__close').addEventListener('click', closeModal);
-  document.querySelector('.modal').addEventListener('click', modalBtnListener);
+  // document.querySelector('.modal').addEventListener('click', modalBtnListener);
   document
     .querySelector('.ingredients__list')
     .addEventListener('click', onClickIngr);
@@ -86,7 +86,7 @@ export function closeModal(e) {
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
-  document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
+  // document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
   document.querySelector('.backdrop').remove();
   ingrList = [];
   ingrNameList = [];
