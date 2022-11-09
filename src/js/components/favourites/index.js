@@ -1,5 +1,6 @@
-import { FAV_COCKTAIL } from './fav_cocktails';
+import { FAV_COCKTAIL, btnAddFav } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
+import { onClickIngr } from '../modal/modalIngr';
 // import { renderMarkup, collectIngr } from '../modal/index';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
@@ -75,20 +76,24 @@ function renderMarkupModal(data, ingredients) {
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
   document.querySelector('.modal__close').addEventListener('click', closeModal);
-  // document.querySelector('.modal').addEventListener('click', modalBtnListener);
-  // document
-  //   .querySelector('.ingredients__list')
-  //   .addEventListener('click', onClickIngr);
+  document.querySelector('.modal').addEventListener('click', modalBtnListener);
+  document
+    .querySelector('.ingredients__list')
+    .addEventListener('click', onClickIngr);
 }
 
 export function closeModal(e) {
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
-  // document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
+  document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
   document.querySelector('.backdrop').remove();
   ingrList = [];
   ingrNameList = [];
+}
+
+export function modalBtnListener(e) {
+  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
 }
 
 ///
