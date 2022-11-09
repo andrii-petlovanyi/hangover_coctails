@@ -5,7 +5,7 @@ import Notiflix from 'notiflix';
 
 export const formSubmitRef = document.querySelector('.header__input');
 export const submitBtnRef = document.querySelector('.input__btn');
-export const refCocktailList = document.querySelector('.coctails-list');
+export const refCocktailList = document.querySelector('.js-main-coct');
 
 let searchQuery = '';
 

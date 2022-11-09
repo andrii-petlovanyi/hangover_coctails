@@ -52,10 +52,10 @@ export function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  document.querySelector('.coctails-list').innerHTML = mark;
+  document.querySelector('.js-main-coct').innerHTML = mark;
 }
 
-// export async function cardBtnListenr(e) {
-//   if (e.target.dataset.type) return await searchCoctById(e.target.dataset.id);
-//   if (e.target.dataset.add) return await btnAddFav(e.target.dataset.favid);
-// }
+export async function cardBtnListenr(e) {
+  if (e.target.dataset.type) return await searchCoctById(e.target.dataset.id);
+  if (e.target.dataset.add) return await btnAddFav(e.target.dataset.favid);
+}

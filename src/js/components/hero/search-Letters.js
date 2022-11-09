@@ -73,10 +73,10 @@ function renderMarkup(data = []) {
     })
     .join('');
   document.querySelector('.main-title').textContent = 'Searching results';
-  document.querySelector(`.coctails-list`).innerHTML = mark;
+  document.querySelector(`.js-main-coct`).innerHTML = mark;
 }
 
 function renderError(markup) {
   document.querySelector('.main-title').textContent = '';
-  document.querySelector(`.coctails-list`).innerHTML = markup;
+  document.querySelector(`.js-main-coct`).innerHTML = markup;
 }
