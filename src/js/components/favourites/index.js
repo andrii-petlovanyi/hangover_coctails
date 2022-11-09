@@ -92,9 +92,9 @@ export function closeModal(e) {
   ingrNameList = [];
 }
 
-export function modalBtnListener(e) {
-  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
-}
+// export function modalBtnListener(e) {
+//   if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
+// }
 
 ///
 
