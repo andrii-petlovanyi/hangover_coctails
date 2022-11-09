@@ -1,4 +1,4 @@
-import { FAV_COCKTAIL, btnAddFav } from './fav_cocktails';
+import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 import { onClickIngr } from '../modal/modalIngr';
 // import { renderMarkup, collectIngr } from '../modal/index';
