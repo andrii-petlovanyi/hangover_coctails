@@ -1,5 +1,5 @@
 import { getCoctById } from './../../api';
-// import sprite from '../../../images/svg/sprite.svg';
+import sprite from '../../../images/svg/sprite.svg';
 
 export const FAV_COCKTAIL = 'favourites_coctails';
 
@@ -41,13 +41,13 @@ export async function btnAddFav(id, type) {
 export function removeBtnCard(id) {
   document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Remove
           <svg class="heart-icon" width="18" height="18">
-            <use href="#icon-heart_full"></use>
+            <use href="${sprite}#icon-heart_full"></use>
           </svg>`;
 }
 export function addBtnCard(id) {
   document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Add to
           <svg class="heart-icon" width="18" height="18">
-            <use href="#icon-Heart"></use>
+            <use href="${sprite}#icon-Heart"></use>
           </svg>`;
 }
 
