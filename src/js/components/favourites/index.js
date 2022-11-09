@@ -1,15 +1,23 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
-import { cardBtnListenr } from '../main';
+import { searchCoctById } from '../modal';
 
 const refCocktailList = document.querySelector('.coctails-list');
+const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
 refCocktailList.addEventListener('click', cardBtnListenr);
+refCocktList.addEventListener('click', deleteCard);
 
 if (actArr.length) {
   renderMarkup(actArr);
 } else {
   renderErrorMarkup();
+}
+
+function deleteCard(e) {
+  if (!e.target.dataset.favid) return;
+  deleteFavFromLS(e.target.dataset.favid);
+  e.target.parentNode.parentNode.remove();
 }
 
 function renderMarkup(data = []) {
@@ -38,4 +46,19 @@ function renderErrorMarkup() {
               You haven't added any favorite cocktails yet
             </li>`;
   document.querySelector('.js-add_f-coctail').innerHTML = mark;
+}
+
+function cardBtnListenr(e) {
+  if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
+}
+
+function deleteFavFromLS(id) {
+  const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  for (let i = 0; i < actArr.length; i++) {
+    if (actArr[i].idDrink === id) {
+      actArr.splice(i, 1);
+      localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
+      return;
+    }
+  }
 }
