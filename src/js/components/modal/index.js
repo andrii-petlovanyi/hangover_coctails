@@ -18,7 +18,7 @@ export async function searchCoctById(id) {
   }
 }
 
-export function collectIngr(newArr) {
+export function collectIngr(newArr = []) {
   for (let i = 1; i <= 15; i++) {
     if (newArr[0][`strIngredient` + i] === null) return;
     ingrNameList.push(newArr[0][`strIngredient` + i]);

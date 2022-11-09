@@ -1,13 +1,13 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
-import { searchCoctById } from '../modal/index';
+import { renderMarkup, collectIngr } from '../modal/index';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
 refCocktList.addEventListener('click', deleteCard);
 
 if (actArr.length) {
-  renderMarkup(actArr);
+  renderMarkupList(actArr);
 } else {
   renderErrorMarkup();
 }
@@ -22,7 +22,21 @@ function deleteCard(e) {
   if (e.target.dataset.type) return searchCoctById(e.target.dataset.id);
 }
 
-function renderMarkup(data = []) {
+///
+let ingrList = [];
+async function searchCoctById(id) {
+  try {
+    const { data } = await getCoctById(id);
+    collectIngr(data.drinks);
+    renderMarkup(...data.drinks, ingrList);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+///
+
+function renderMarkupList(data = []) {
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
       return `<li class="coctail-card">
@@ -49,10 +63,6 @@ function renderErrorMarkup() {
             </li>`;
   refCocktList.innerHTML = mark;
 }
-
-// function cardBtnListenr(e) {
-//   if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
-// }
 
 function deleteFavFromLS(id) {
   const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
