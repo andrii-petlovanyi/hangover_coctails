@@ -26,7 +26,7 @@
   font-size: 22px;
   line-height: 1.91;
   display: flex;
-    @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $tablet) {
     margin: auto;
   }
   @media screen and (min-width: $tablet) {
@@ -61,7 +61,7 @@
   opacity: 0.8;
   font-size: 14px;
   line-height: 2;
-    @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $tablet) {
     margin: 20px auto;
   }
   @media screen and (min-width: $tablet) {
@@ -197,17 +197,21 @@ hero__input:focus {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.5;
   align-items: center;
   text-align: center;
   color: #5f6775;
-  width: 24px;
-  height: 25px;
 
   &:hover,
   &:focus {
     cursor: pointer;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 24px;
+    height: 25px;
   }
 
   @media screen and (min-width: $desktop) {
