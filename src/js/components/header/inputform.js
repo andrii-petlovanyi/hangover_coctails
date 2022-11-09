@@ -1,23 +1,22 @@
 import { renderMarkup } from '../main';
-import { getCoctByName } from '.../api';
+import { getCoctByName } from '../../api';
+import { notFound } from '../error';
 import Notiflix from 'notiflix';
 
-const formSubmitRef= document.querySelector(".header__input")
-const submitBtnRef = document.querySelector('.input__btn');
+export const formSubmitRef = document.querySelector('.header__input');
+export const submitBtnRef = document.querySelector('.input__btn');
+export const refCocktailList = document.querySelector('.coctails-list');
 
 let searchQuery = '';
 
-async function onSubmitForm(e) {
+export async function onSubmitForm(e) {
   e.preventDefault();
-       searchQuery = e.currentTarget.finder.value.trim();
+  searchQuery = e.currentTarget.finder.value.trim();
   if (!searchQuery) {
-    Notiflix.Notify.warning(
-      'Sorry, please enter the name of the cocktail.'
-    );
-           return;
+    Notiflix.Notify.warning('Sorry, please enter the name of the cocktail.');
+    return;
   }
-    const {data} = await getCoctByName(searchQuery)
-  refCocktailList.innerHTML = '';
+  const { data } = await getCoctByName(searchQuery);
+  if (!data.drinks) return (refCocktailList.innerHTML = notFound);
   renderMarkup(data.drinks);
-  
 }
