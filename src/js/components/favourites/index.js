@@ -75,26 +75,26 @@ function renderMarkupModal(data, ingredients) {
   </div>
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
-  document.querySelector('.modal__close').addEventListener('click', closeModal);
-  document.querySelector('.modal').addEventListener('click', modalBtnListener);
-  document
-    .querySelector('.ingredients__list')
-    .addEventListener('click', onClickIngr);
+  // document.querySelector('.modal__close').addEventListener('click', closeModal);
+  // document.querySelector('.modal').addEventListener('click', modalBtnListener);
+  // document
+  //   .querySelector('.ingredients__list')
+  //   .addEventListener('click', onClickIngr);
 }
 
-export function closeModal(e) {
-  document
-    .querySelector('.modal__close')
-    .removeEventListener('click', closeModal);
-  // document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
-  document.querySelector('.backdrop').remove();
-  ingrList = [];
-  ingrNameList = [];
-}
+// export function closeModal(e) {
+//   document
+//     .querySelector('.modal__close')
+//     .removeEventListener('click', closeModal);
+//   // document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
+//   document.querySelector('.backdrop').remove();
+//   ingrList = [];
+//   ingrNameList = [];
+// }
 
-export function modalBtnListener(e) {
-  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
-}
+// export function modalBtnListener(e) {
+//   if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
+// }
 
 ///
 
