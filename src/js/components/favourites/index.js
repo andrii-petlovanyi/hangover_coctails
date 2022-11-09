@@ -2,11 +2,11 @@ import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 import { searchCoctById } from '../modal';
 
-// const refCocktailList = document.querySelector('.coctails-list');
+const refCocktailList = document.querySelector('.coctails-list');
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
-refCocktList.addEventListener('click', cardBtnListenr);
-// refCocktList.addEventListener('click', deleteCard);
+refCocktailList.addEventListener('click', cardBtnListenr);
+refCocktList.addEventListener('click', deleteCard);
 
 if (actArr.length) {
   renderMarkup(actArr);
@@ -14,7 +14,11 @@ if (actArr.length) {
   renderErrorMarkup();
 }
 
-// function deleteCard(e) {}
+function deleteCard(e) {
+  if (!e.target.dataset.favid) return;
+  deleteFavFromLS(e.target.dataset.favid);
+  e.target.parentNode.parentNode.remove();
+}
 
 function renderMarkup(data = []) {
   const mark = data
@@ -34,22 +38,18 @@ function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  refCocktList.innerHTML = mark;
+  document.querySelector('.js-add_f-coctail').innerHTML = mark;
 }
 
 function renderErrorMarkup() {
   const mark = `<li class="f-coctails__item">
               You haven't added any favorite cocktails yet
             </li>`;
-  refCocktList.innerHTML = mark;
+  document.querySelector('.js-add_f-coctail').innerHTML = mark;
 }
 
 function cardBtnListenr(e) {
   if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
-  if (!e.target.dataset.favid) {
-    deleteFavFromLS(e.target.dataset.favid);
-    e.target.parentNode.parentNode.remove();
-  }
 }
 
 function deleteFavFromLS(id) {
