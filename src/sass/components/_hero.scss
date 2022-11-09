@@ -1,31 +1,20 @@
 .hero {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-top: 60px;
   @media screen and (min-width: $tablet) {
-    margin-top: 51px;
+    margin-top: 77px;
   }
   @media screen and (min-width: $desktop) {
     margin-top: 97px;
   }
 }
 
-.favorites__img {
-  @media screen and (min-width: $tablet) {
-    margin-right: 32px;
-    width: 336px;
-    height: 294px;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 501px;
-    height: 439px;
-  }
-}
-
 .container__hero {
-  display: flex;
-  flex-direction: column;
-  @media screen and (max-width: $tablet) {
+  margin-bottom: 0;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -36,6 +25,10 @@
   color: #fd5103;
   font-size: 22px;
   line-height: 1.91;
+  display: flex;
+  @media screen and (max-width: $tablet) {
+    margin: auto;
+  }
   @media screen and (min-width: $tablet) {
     font-size: 26px;
     line-height: 1.62;
@@ -50,31 +43,46 @@
     height: 160px;
   }
 }
-
+.hero__chose {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $tablet) {
+    margin-top: -247px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: -310px;
+  }
+}
 .hero__search {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.8;
-  margin: 40px 0;
   font-size: 14px;
   line-height: 2;
+  @media screen and (max-width: $tablet) {
+    margin: 20px auto;
+  }
+  @media screen and (min-width: $tablet) {
+    margin: 40px 0;
+  }
   @media screen and (min-width: $desktop) {
+    margin: 40px 0;
     font-size: 18px;
     line-height: 1.56;
     color: #202025;
+    margin-bottom: 40px;
   }
 }
 
 .hero__input {
   display: flex;
-  flex-direction: row;
+  justify-content: end;
   align-items: center;
-  padding: 10px;
-  gap: 14px;
+  padding: 10px 5px 8px 5px;
   cursor: pointer;
-  //   position: absolute;
+
   width: 93px;
   height: 34px;
   border: 1px solid #fd5103;
@@ -95,15 +103,9 @@
 }
 
 .hero__svg {
-  //   display: flex;
-  //   position: absolute;
-  //   left: 64px;
-  //   top: 7px;
-  //   color: inherit;
-
   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
+  position: absolute;
+  color: inherit;
 
   @media screen and (min-width: $tablet) {
     position: absolute;
@@ -132,9 +134,20 @@ hero__input:focus {
 
 .hero__list {
   @media screen and (max-width: $mobile) {
-    position: absolute;
     border: 1px solid #fd5103;
     border-radius: 4px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    &.active {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      transition-duration: 300ms;
+      //   top: 60px;
+      //   left: 320px;
+    }
   }
   @media screen and (max-width: $tablet) {
     position: absolute;
@@ -142,6 +155,19 @@ hero__input:focus {
     height: 84px;
     overflow-y: auto;
     border: 1px solid black;
+
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    &.active {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      transition-duration: 300ms;
+      //   top: 60px;
+      //   left: 320px;
+    }
   }
   @media screen and (min-width: $tablet) {
     display: flex;
@@ -159,6 +185,8 @@ hero__input:focus {
 }
 .hero__select {
   @media screen and (max-width: 767.99px) {
+    display: flex;
+    margin: auto;
     position: relative;
     width: 93px;
     height: 34px;
@@ -169,17 +197,21 @@ hero__input:focus {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.5;
   align-items: center;
   text-align: center;
   color: #5f6775;
-  width: 24px;
-  height: 25px;
 
   &:hover,
   &:focus {
     cursor: pointer;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 24px;
+    height: 25px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -188,12 +220,29 @@ hero__input:focus {
     font-size: 24px;
     line-height: 1.5;
   }
-  //   text-stroke: 4px navy;
-  // stroke = "green" ;
-  // stroke-width = "4";
 }
+
 .letter__is-active {
   -webkit-text-stroke: 1px #5f6775;
   text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
   color: #fd5103;
+}
+
+.favorites__img {
+  // @media screen and (max-width: $tablet) {
+  margin: 60px auto;
+  width: 280px;
+  height: 245px;
+
+  //}
+  @media screen and (min-width: $tablet) {
+    margin-top: 0;
+    width: 336px;
+    height: 294px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 0;
+    width: 501px;
+    height: 439px;
+  }
 }
