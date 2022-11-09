@@ -1,8 +1,9 @@
 import { getCoctById } from '../../api';
-import { FAV_COCKTAIL } from '../favourites/fav_cocktails';
+import { cardBtnListenr } from '../main';
+import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 
-const ingrList = [];
+let ingrList = [];
 
 export async function searchCoctById(id) {
   try {
@@ -31,13 +32,13 @@ function collectIngr(newArr) {
 
 function renderMarkup(data, ingredients) {
   const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
-  const { strDrink, strDrinkThumb, strInstructions } = data;
+  const { strDrink, strDrinkThumb, strInstructions, idDrink } = data;
   const isFav = actArr.find(item => item.strDrink === strDrink);
   const btn = isFav ? 'Remove from favorite' : 'Add to favorite';
   const markup = `
 <div class="backdrop">
   <div class="modal">
-    <button type="button" aria-label="Close button" class="modal__close">
+    <button type="button" aria-label="Close button" class="modal__close" >
       <svg class="modal__icon" width="24" height="24">
         <use href="${sprite}#icon-close-burger"></use>
       </svg>
@@ -58,6 +59,7 @@ function renderMarkup(data, ingredients) {
       type="button"
       class="button modal__button--favorite"
       aria-label="${btn}"
+      data-add="add" data-favid=${idDrink}
     >
       ${btn}
     </button>
@@ -65,11 +67,18 @@ function renderMarkup(data, ingredients) {
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
   document.querySelector('.modal__close').addEventListener('click', closeModal);
+  document.querySelector('.modal').addEventListener('click', modalBtnListener);
 }
 
 function closeModal(e) {
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
+  document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
   document.querySelector('.backdrop').remove();
+  ingrList = [];
+}
+
+export function modalBtnListener(e) {
+  if (e.target.dataset.add) btnAddFav(e.target.dataset.favid, 'modal');
 }

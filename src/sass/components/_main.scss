@@ -56,7 +56,7 @@
 .img {
   width: 278px;
   height: 279px;
-  background-color: aqua;
+  background-color: $primary-white-color;
   border-radius: 5px 5px 0 0;
   @media screen and (min-width: $tablet) {
     width: 333px;
@@ -76,13 +76,13 @@
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+  
   @media screen and (min-width: $tablet) {
     
     margin-bottom: 19px;
   }
   @media screen and (min-width: $desktop) {
     margin-bottom: 32px;
-    
   }
 }
 
@@ -93,7 +93,7 @@
 .coctail-card__name,
 .ingredients__name {
   height: 106px;
-   display: flex;
+  display: flex;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6;
@@ -141,6 +141,10 @@
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 .button-add_to,
 .button-remove {
@@ -169,6 +173,11 @@
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
   }
 }
 
