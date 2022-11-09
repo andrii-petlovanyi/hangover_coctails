@@ -1,10 +1,15 @@
-<section class="hero">
-  <div class="container__hero">
+<section class="container hero">
+  <div class=" container__hero">
     <h1 class="hero__title ">A party without cocktails
       is not like a party</h1>
     <p class="hero__search">Search your favorite cocktail by ABC </p>
-    <!-- <div class="hero__search"> -->
-      <ul class="hero__list">
+    <div class="hero__select">
+      <span class="hero__input">
+        <svg class="hero__svg" width="16" height="16">
+          <use href="./images/svg/sprite.svg#icon-select"></use>
+        </svg>
+      </span>
+      <ul class="hero__list ">
         <li class="hero__item">A</li>
         <li class="hero__item">C</li>
         <li class="hero__item">B</li>
@@ -31,7 +36,7 @@
         <li class="hero__item">X</li>
         <li class="hero__item">Y</li>
         <li class="hero__item">Z</li>
-        <li class="hero__item"></li>
+        <!-- <li class="hero__item"></li> -->
         <li class="hero__item">1</li>
         <li class="hero__item">2</li>
         <li class="hero__item">3</li>
@@ -43,21 +48,22 @@
         <li class="hero__item">9</li>
         <li class="hero__item">0</li>
       </ul>
-    <!-- </div> -->
+
+    </div>
   </div>
-    <picture>
-      <source srcset="
+  <picture>
+    <source srcset="
       ./images/hero/HeroMobile1x.png 1x,
       ./images/hero/HeroMobile2x.png 2x
       " media="(max-width: 767.98px)" />
-      <source srcset="
+    <source srcset="
       ./images/hero/HeroTablet1x.png 1x,
       ./images/hero/HeroTablet2x.png 2x
       " media="(max-width: 1279px)" />
-      <source srcset="
+    <source srcset="
       ./images/hero/HeroDesctop1x.png 1x,
       ./images/hero/HeroDesctop2x.png 2x
       " media="(min-width: 1280px)" />
-      <img class="favorites__img" src="./images/hero/HeroMobile1x.png" alt="hero photo" />
-    </picture>
+    <img class="favorites__img" src="./images/hero/HeroMobile1x.png" alt="hero photo" />
+  </picture>
 </section>

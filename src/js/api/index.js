@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const instance = axios.create({
   baseURL: 'https://www.thecocktaildb.com/api/json/v2/9973533/',
-  timeout: 1000,
 });
 
 export async function getRandCoctList() {
   try {
-    return (response = await instance.get('randomselection.php'));
+    const response = await instance.get('randomselection.php');
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -15,7 +15,8 @@ export async function getRandCoctList() {
 
 export async function getCoctByName(name) {
   try {
-    return (response = await instance.get(`search.php?s=${name}`));
+    const response = await instance.get(`search.php?s=${name}`);
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -23,7 +24,17 @@ export async function getCoctByName(name) {
 
 export async function getCoctByFirstLet(letter) {
   try {
-    return (response = await instance.get(`search.php?f=${letter}`));
+    const response = await instance.get(`search.php?f=${letter}`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getCoctById(id) {
+  try {
+    const response = await instance.get(`lookup.php?i=${id}`);
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -31,7 +42,8 @@ export async function getCoctByFirstLet(letter) {
 
 export async function getIngrByName(name) {
   try {
-    return (response = await instance.get(`search.php?i=${name}`));
+    const response = await instance.get(`search.php?i=${name}`);
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -39,7 +51,8 @@ export async function getIngrByName(name) {
 
 export async function getIngrById(id) {
   try {
-    return (response = await instance.get(`lookup.php?iid=${id}`));
+    const response = await instance.get(`lookup.php?iid=${id}`);
+    return response;
   } catch (error) {
     console.log(error);
   }

@@ -26,9 +26,11 @@
 
 .modal {
   width: 100%;
-  height: 100%;
+  height: 760px;
   padding: 40px 20px;
   opacity: 1;
+
+  overflow-y: scroll;
 
   font-family: 'Popins';
 
@@ -75,6 +77,11 @@
   border: none;
 
   background-color: transparent;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .coctail {
@@ -108,6 +115,8 @@
 
   font-size: 16px;
   line-height: 1.75;
+
+  overflow-y: scroll;
 
   @media screen and (min-width: $tablet) {
     order: +1;
@@ -177,6 +186,10 @@
     position: absolute;
     top: 175px;
     left: 330px;
+
+    height: 155px;
+    width: 220px;
+    overflow-y: scroll;
   }
 }
 
@@ -223,4 +236,14 @@
   @media screen and (min-width: $desktop) {
     margin-left: 540px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $accent-mod-text-color;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
