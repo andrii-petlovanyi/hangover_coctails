@@ -20,11 +20,11 @@ export async function addBtnFavIngr(name) {
       if (actArr[i].strIngredient === strIngredient) {
         actArr.splice(i, 1);
         localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
-
+        addBtnModal();
         return;
       }
     }
-
+    removeBtnModal();
     actArr.push(ingrArr);
     localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
     console.log(data.ingredients[0]);
@@ -47,10 +47,9 @@ export function addBtnCard(id) {
 }
 
 export function removeBtnModal() {
-  document.querySelector('.modal__button--favorite').textContent =
+  document.querySelector('.js-mod-ingr-add').textContent =
     'Remove from favorite';
 }
 export function addBtnModal() {
-  document.querySelector('.modal__button--favorite').textContent =
-    'Add to favorite';
+  document.querySelector('.js-mod-ingr-add').textContent = 'Add to favorite';
 }

@@ -1,5 +1,9 @@
 import sprite from '../../../images/svg/sprite.svg';
 import { getIngrByName } from '../../api';
+import {
+  addBtnFavIngr,
+  FAV_INGREDIENTS,
+} from '../favourites/ingredients/fav_ingredients';
 
 export async function onClickIngr(e) {
   const searchQ = e.target.dataset.name;
@@ -12,7 +16,10 @@ export async function searchIngrByName(name) {
 }
 
 function renderMarkup(data) {
+  const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
   const { strIngredient, strDescription, strAlcohol, strABV, strType } = data;
+  const isFav = actArr.find(item => item.strIngredient === strIngredient);
+  const btn = isFav ? 'Remove from favorite' : 'Add to favorite';
   const markup = `<div class="backdrop--ingredient" >
   <div class="modal--ingredient">
     <button type="button" aria-label="Close button" class="modal__close js_modal-ingr">
@@ -38,30 +45,32 @@ function renderMarkup(data) {
     </ul>
     <button
       type="button"
-      class="button modal__button--favorite--ingredients"
-      aria-label="Add to favorite"
+      class="button js-mod-ingr-add modal__button--favorite--ingredients"
+      aria-label="${btn}" data-name="${strIngredient}"
     >
-      Add to favorite
+      ${btn}
     </button>
-
-    <!-- <button
-      type="button"
-      class="button modal__button--remove"
-      aria-label="Remove from favorite"
-    >
-      Remove from favorite
-    </button> -->
   </div>
 </div>`;
-  document.querySelector('.backdrop').insertAdjacentHTML('beforeend', markup);
+  document.body.insertAdjacentHTML('beforeend', markup);
   document
     .querySelector('.js_modal-ingr')
     .addEventListener('click', closeModalIngr);
+  document
+    .querySelector('.js-mod-ingr-add')
+    .addEventListener('click', addToFavIngr);
 }
 
 function closeModalIngr() {
   document
     .querySelector('.js_modal-ingr')
     .removeEventListener('click', closeModalIngr);
+  document
+    .querySelector('.js-mod-ingr-add')
+    .removeEventListener('click', addToFavIngr);
   document.querySelector('.backdrop--ingredient').remove();
+}
+
+function addToFavIngr(e) {
+  addBtnFavIngr(e.target.dataset.name);
 }
