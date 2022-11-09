@@ -5,12 +5,17 @@ import { searchIngrByName } from '../../modal/modalIngr';
 const refIngrList = document.querySelector('.ingredients-list');
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
 
-refIngrList.addEventListener('click', test);
+refIngrList.addEventListener('click', chooseBtnIngr);
 
-function test(e) {
-  if (!e.target.dataset.name) return;
-  // console.log(e.target.dataset.name);
-  searchIngrByName(e.target.dataset.name);
+function chooseBtnIngr(e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  if (e.target.dataset.name) {
+    searchIngrByName(e.target.dataset.name);
+  }
+  if (e.target.dataset.fav) {
+    deleteFavIngrFromLS(e.target.dataset.fav);
+    e.target.parentNode.parentNode.remove();
+  }
 }
 
 if (actArr.length) {
@@ -27,10 +32,10 @@ function renderMarkup(data = []) {
           <h5 class="ingredients__type">${strType}</h5>
           <div class="ingredients-card__options">
             <button class="button-learn_more" data-name="${strIngredient}">Learn more</button>
-            <button class="button-remove ">
+            <button class="button-remove" data-fav=${strIngredient}>
               Remove
               <svg class="heart-icon" width="18" height="18">
-                <use href="${sprite}#icon-heart_full"></use>
+                <use href="${sprite}#icon-heart_full" ></use>
               </svg>
             </button>
           </div>
@@ -45,4 +50,15 @@ function renderErrorMarkup() {
               You haven't added any favorite cocktails yet
             </li>`;
   refIngrList.innerHTML = mark;
+}
+
+function deleteFavIngrFromLS(id) {
+  const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+  for (let i = 0; i < actArr.length; i++) {
+    if (actArr[i].strIngredient === id) {
+      actArr.splice(i, 1);
+      localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
+      return;
+    }
+  }
 }
