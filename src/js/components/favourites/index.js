@@ -76,7 +76,7 @@ function renderMarkupModal(data, ingredients) {
 </div>`;
   document.body.insertAdjacentHTML('beforeend', markup);
   document.querySelector('.modal__close').addEventListener('click', closeModal);
-  // document.querySelector('.modal').addEventListener('click', modalBtnListener);
+  document.querySelector('.modal').addEventListener('click', modalBtnListener);
   document
     .querySelector('.ingredients__list')
     .addEventListener('click', onClickIngr);
@@ -92,9 +92,9 @@ export function closeModal(e) {
   ingrNameList = [];
 }
 
-// export function modalBtnListener(e) {
-//   if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
-// }
+export function modalBtnListener(e) {
+  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
+}
 
 ///
 
