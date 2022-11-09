@@ -1,4 +1,4 @@
-.backdrop {
+.backdrop--ingredient {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,22 +12,22 @@
   transition: opacity 250ms $cubic;
 }
 
-.backdrop.is__hidden {
+.backdrop--ingredient.is__hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.modal {
-  .backdrop.is__hidden & {
+.modal--ingredient {
+  .backdrop--ingredient.is__hidden & {
     transform: translate(-50%, -50%) scale(2) rotate(2turn);
     opacity: 0;
   }
 }
 
-.modal {
+.modal--ingredient {
   width: 100%;
   height: 760px;
-  padding: 40px 20px;
+  padding: 30px;
   opacity: 1;
 
   overflow-y: scroll;
@@ -40,13 +40,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 720px;
-    height: 530px;
-
-    padding: 15px 10px;
-
-    display: flex;
-    flex-direction: column;
+    width: 760px;
+    height: 525px;
 
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.06);
@@ -57,8 +52,6 @@
     transform: translate(-50%, 0);
   }
   @media screen and (min-width: $desktop) {
-    width: 820px;
-    height: 550px;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 500ms $cubic, opacity 500ms $cubic;
   }
@@ -84,113 +77,49 @@
   }
 }
 
-.coctail {
+.ingredient {
   font-family: 'Roboto';
   font-size: 32px;
   font-weight: 900;
   line-height: 1.17;
-
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    top: 40px;
-    left: 330px;
-  }
 }
 
-.coctail__instruction {
+.ingredient__sort {
   margin-top: 20px;
 
   font-size: 16px;
   font-weight: 600;
   line-height: 1.62;
+}
 
+.line {
   @media screen and (min-width: $tablet) {
-    margin-top: 28px;
-    margin-left: 18px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid;
+    border-color: $accent-text-color;
   }
 }
 
-.coctail__description {
+.ingredient__description {
   margin-top: 24px;
 
   font-size: 16px;
   line-height: 1.75;
 
   overflow-y: scroll;
-
-  @media screen and (min-width: $tablet) {
-    order: +1;
-
-    margin-top: 10px;
-    margin-left: 18px;
-
-    display: inline-block;
-    height: 85px;
-    width: 515px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    height: 85px;
-    width: 615px;
-  }
 }
 
-.coctail__img {
-  border-radius: 5px;
+.ingredient__list {
+  margin-top: 30px;
 
-  margin-top: 15px;
-
-  @media screen and (min-width: $tablet) {
-    order: -1;
-
-    margin-top: 0;
-
-    height: 320px;
-    width: 288px;
-  }
-}
-
-.ingredients {
-  margin-top: 20px;
-
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    top: 100px;
-    left: 330px;
-  }
-}
-
-.ingredients__denominator {
-  margin: 8px 0;
-
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5;
-
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    top: 141px;
-    left: 330px;
-  }
-}
-
-.ingredients__list {
   font-size: 16px;
   line-height: 1.62;
 
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    top: 175px;
-    left: 330px;
-
-    height: 155px;
-    width: 220px;
-    overflow-y: scroll;
-  }
+  overflow-y: scroll;
 }
 
 .button {
@@ -210,16 +139,22 @@
 .modal__button--favorite {
   width: 185px;
   height: 48px;
+}
+
+.modal__button--remove {
+  width: 248px;
+  height: 48px;
+}
+
+.modal__button--favorite--ingredients {
+  width: 185px;
+  height: 48px;
+
+  margin-top: 30px;
 
   @media screen and (min-width: $tablet) {
-    order: +2;
-
-    margin-top: 20px;
+    margin-top: 45px;
     margin-left: 500px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    margin-left: 600px;
   }
 }
 
@@ -228,7 +163,6 @@
 //   height: 48px;
 
 //   @media screen and (min-width: $tablet) {
-//     order: +2;
 //     margin-left: 440px;
 //   }
 
@@ -236,13 +170,3 @@
 //     margin-left: 540px;
 //   }
 // }
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: $accent-mod-text-color;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}

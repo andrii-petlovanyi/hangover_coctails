@@ -52,9 +52,7 @@ export function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  document
-    .querySelector('.coctails-list')
-    .insertAdjacentHTML('beforeend', mark);
+  document.querySelector('.coctails-list').innerHTML = mark;
 }
 
 export function cardBtnListenr(e) {
