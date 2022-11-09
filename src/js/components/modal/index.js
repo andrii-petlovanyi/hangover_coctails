@@ -18,7 +18,7 @@ export async function searchCoctById(id) {
   }
 }
 
-function collectIngr(newArr) {
+export function collectIngr(newArr) {
   for (let i = 1; i <= 15; i++) {
     if (newArr[0][`strIngredient` + i] === null) return;
     ingrNameList.push(newArr[0][`strIngredient` + i]);
@@ -33,7 +33,7 @@ function collectIngr(newArr) {
   }
 }
 
-function renderMarkup(data, ingredients) {
+export function renderMarkup(data, ingredients) {
   const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
   const { strDrink, strDrinkThumb, strInstructions, idDrink } = data;
   const isFav = actArr.find(item => item.strDrink === strDrink);
@@ -79,7 +79,7 @@ function renderMarkup(data, ingredients) {
     .addEventListener('click', onClickIngr);
 }
 
-function closeModal(e) {
+export function closeModal(e) {
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
@@ -90,5 +90,5 @@ function closeModal(e) {
 }
 
 export function modalBtnListener(e) {
-  if (e.target.dataset.add) btnAddFav(e.target.dataset.favid, 'modal');
+  if (e.target.dataset.add) return btnAddFav(e.target.dataset.favid, 'modal');
 }
