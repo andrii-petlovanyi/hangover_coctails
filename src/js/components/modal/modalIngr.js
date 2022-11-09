@@ -8,7 +8,6 @@ export async function onClickIngr(e) {
 
 export async function searchIngrByName(name) {
   const { data } = await getIngrByName(name);
-  console.log(data.ingredients);
   renderMarkup(data.ingredients[0]);
 }
 

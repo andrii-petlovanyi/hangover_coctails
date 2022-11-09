@@ -86,6 +86,7 @@ function closeModal(e) {
   document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
   document.querySelector('.backdrop').remove();
   ingrList = [];
+  ingrNameList = [];
 }
 
 export function modalBtnListener(e) {
