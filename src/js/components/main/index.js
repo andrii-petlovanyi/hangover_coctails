@@ -1,5 +1,6 @@
 import { getRandCoctList } from '../../api';
-import { FAV_COCKTAIL } from '../favourites/fav_cocktails';
+import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
+import { searchCoctById } from '../modal';
 import sprite from '../../../images/svg/sprite.svg';
 
 export async function getListCard() {
@@ -20,11 +21,10 @@ function lengthCocktailList(arr = []) {
   ) {
     return arr.splice(0, 6);
   } else if (document.body.clientWidth > 1280) {
-    console.log(document.body.clientWidth);
     return arr.splice(0, 9);
   }
 }
-function renderMarkup(data = []) {
+export function renderMarkup(data = []) {
   const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
@@ -55,4 +55,9 @@ function renderMarkup(data = []) {
   document
     .querySelector('.coctails-list')
     .insertAdjacentHTML('beforeend', mark);
+}
+
+export function cardBtnListenr(e) {
+  if (e.target.dataset.type) searchCoctById(e.target.dataset.id);
+  if (e.target.dataset.add) btnAddFav(e.target.dataset.favid);
 }

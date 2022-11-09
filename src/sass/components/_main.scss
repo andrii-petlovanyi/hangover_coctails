@@ -6,12 +6,12 @@
   flex-wrap: wrap;
   gap: 20px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width:$tablet) {
     margin-top: 56px;
     margin-bottom: 60px;
     gap: 32px;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     margin-top: 60px;
   }
 }
@@ -25,13 +25,13 @@
   text-align: center;
   justify-content: center;
   color: $primary-text-color;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width:$tablet) {
     margin-top: 60px;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.31;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     font-weight: 700;
     font-size: 48px;
     line-height: 1.5;
@@ -44,11 +44,11 @@
   height: 449px;
   border: 1px solid $accent-mod-text-color;
   border-radius: 5px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: $tablet) {
     width: 335px;
     height: 541px;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     width: 395px;
     height: 556px;
   }
@@ -56,15 +56,15 @@
 .img {
   width: 278px;
   height: 279px;
-  background-color: aqua;
+  background-color: $primary-white-color;
   border-radius: 5px 5px 0 0;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: $tablet) {
     width: 333px;
     height: 395px;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     width: 393px;
-    height: 395px;
+    height: 375px;
   }
 }
 .coctail-card__options {
@@ -76,13 +76,13 @@
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
-  @media screen and (min-width: 767.9px) {
+  
+  @media screen and (min-width: $tablet) {
     
     margin-bottom: 19px;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     margin-bottom: 32px;
-    
   }
 }
 
@@ -93,7 +93,7 @@
 .coctail-card__name,
 .ingredients__name {
   height: 106px;
-   display: flex;
+  display: flex;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6;
@@ -101,14 +101,14 @@
   align-items: center;
   justify-content: center;
   color: $primary-text-color;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width:$tablet) {
     height: 78px;
     font-weight: 900;
     font-size: 28px;
     line-height: 1.18;
   }
-  @media screen and (min-width: 1279.9px) {
-    height: 85px;
+  @media screen and (min-width: $desktop) {
+    height: 105px;
     font-weight: 900;
     font-size: 32px;
     line-height: 1.19;
@@ -125,21 +125,25 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
-  @media screen and (min-width: 767.9px) {
-    margin-right: 12px;
+  @media screen and (min-width: $tablet) {
+    margin-right: 20px;
     width: 160px;
     height: 48px;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     margin-right: 16px;
     width: 182px;
     height: 48px;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+  }
+  &:hover,
+  &:focus {
+    cursor: pointer;
   }
 }
 .button-add_to,
@@ -156,29 +160,34 @@
   font-size: 14px;
   line-height: 1.7;
   color: $accent-mod-text-color;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: $tablet) {
     width: 123px;
     height: 48px;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
-  @media screen and (min-width: 1279.9px) {
+  @media screen and (min-width: $desktop) {
     width: 141px;
     height: 48px;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .heart-icon {
   fill: $accent-mod-text-color;
   margin-left: 9px;
-  @media screen and (min-width: 479.9px) {
+  @media screen and (min-width: $mobile) {
     margin-left: 6px;
   }
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: $tablet) {
     margin-left: 6px;
   }
 }
@@ -189,11 +198,11 @@
   padding: 20px;
   border: 1px solid $accent-mod-text-color;
   border-radius: 5px;
-  @media screen and (min-width: 479.9px) {
+  @media screen and (min-width: $tablet) {
     width: 335px;
     height: 205px;
   }
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: $desktop) {
     padding: 28px;
     width: 395px;
     height: 221px;
@@ -214,11 +223,8 @@
   line-height: 1.5;
   text-transform: uppercase;
   color: #000000;
-  @media screen and (min-width: 479.9px) {
-    margin-top: 28px;
-    margin-bottom: 28px;
-  }
-  @media screen and (min-width: 767.9px) {
+  
+  @media screen and (min-width: $tablet) {
     margin-top: 28px;
     margin-bottom: 28px;
   }
