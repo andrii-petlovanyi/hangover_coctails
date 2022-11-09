@@ -30,16 +30,12 @@ function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  document
-    .querySelector('.js-add_f-coctail')
-    .insertAdjacentHTML('beforeend', mark);
+  document.querySelector('.js-add_f-coctail').innerHTML = mark;
 }
 
 function renderErrorMarkup() {
   const mark = `<li class="f-coctails__item">
               You haven't added any favorite cocktails yet
             </li>`;
-  document
-    .querySelector('.js-add_f-coctail')
-    .insertAdjacentHTML('beforeend', mark);
+  document.querySelector('.js-add_f-coctail').innerHTML = mark;
 }

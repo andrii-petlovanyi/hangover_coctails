@@ -1,43 +1,38 @@
-import { getCoctById } from './../../api';
-import sprite from '../../../images/svg/sprite.svg';
+import { getIngrByName } from '../../../api';
 
-export const FAV_COCKTAIL = 'favourites_coctails';
+export const FAV_INGREDIENTS = 'favourites_ingredients';
 
-// Local Storage
-export async function btnAddFav(id, type) {
+export async function addBtnFavIngr(name) {
   try {
-    const { data } = await getCoctById(id);
-    const { strDrink, strDrinkThumb, idDrink } = data.drinks[0];
-    const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
-    const drinkArr = {
-      strDrink,
-      strDrinkThumb,
-      idDrink,
+    const { data } = await getIngrByName(name);
+    const { strIngredient, strDescription, strAlcohol, strABV, strType } =
+      data.ingredients[0];
+    const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+    const ingrArr = {
+      strIngredient,
+      strDescription,
+      strAlcohol,
+      strABV,
+      strType,
     };
+
     for (let i = 0; i < actArr.length; i++) {
-      if (actArr[i].idDrink === idDrink) {
+      if (actArr[i].strIngredient === strIngredient) {
         actArr.splice(i, 1);
-        localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
-        if (!type) {
-          addBtnCard(idDrink);
-        } else {
-          addBtnModal(idDrink);
-        }
+        localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
+
         return;
       }
     }
-    actArr.push(drinkArr);
-    localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
 
-    if (!type) {
-      removeBtnCard(idDrink);
-    } else {
-      removeBtnModal(idDrink);
-    }
+    actArr.push(ingrArr);
+    localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
+    console.log(data.ingredients[0]);
   } catch (error) {
     console.log(error);
   }
 }
+
 export function removeBtnCard(id) {
   document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Remove
           <svg class="heart-icon" width="18" height="18">
