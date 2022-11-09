@@ -12,3 +12,6 @@ const refCocktailList = document.querySelector('.coctails-list');
 refCocktailList.addEventListener('click', cardBtnListenr);
 
 lettersListRef.addEventListener(`click`, chooseLetter);
+formSubmitRef.addEventListener('submit', onSubmitForm)
+
+

@@ -82,3 +82,4 @@ function closeModal(e) {
 export function modalBtnListener(e) {
   if (e.target.dataset.add) btnAddFav(e.target.dataset.favid, 'modal');
 }
+
