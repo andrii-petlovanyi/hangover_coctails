@@ -1,7 +1,7 @@
 import { getRandCoctList } from '../../api';
 import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
 import { searchCoctById } from '../modal';
-import sprite from '../../../images/svg/sprite.svg';
+// import sprite from '../../../images/svg/sprite.svg';
 
 export async function getListCard() {
   try {
@@ -33,13 +33,13 @@ export function renderMarkup(data = []) {
         ? ` <button class="button-add_to" data-favid=${idDrink} data-add="add">
           Remove
           <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-heart_full"></use>
+            <use href="$#icon-heart_full"></use>
           </svg>
         </button>`
         : ` <button class="button-add_to" data-favid=${idDrink} data-add="add">
           Add to
           <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-Heart"></use>
+            <use href="#icon-Heart"></use>
           </svg>
         </button>`;
       return `<li class="coctail-card">
