@@ -1,7 +1,7 @@
 let drinks = [];
 let page = 1;
 let renderCards;
-const container = document.querySelector('.js-pagination');
+export const container = document.querySelector('.js-pagination');
 
 const perPage = getPerPage();
 

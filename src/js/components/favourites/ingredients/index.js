@@ -3,12 +3,11 @@ import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
 import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
+import { refIngrList, refFormSearch } from '../../refs';
+import { errorListFavCocktail } from '../../../templates';
 
-const refIngrList = document.querySelector('.ingredients-list');
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
-const refForm = document.querySelector('.header__input');
-refForm.addEventListener('submit', searchCockt);
-
+refFormSearch.addEventListener('submit', searchCockt);
 refIngrList.addEventListener('click', chooseBtnIngr);
 
 themeSwitcher();
@@ -52,10 +51,7 @@ function renderMarkup(data = []) {
 }
 
 function renderErrorMarkup() {
-  const mark = `<li class="f-coctails__item">
-              You haven't added any favorite cocktails yet
-            </li>`;
-  refIngrList.innerHTML = mark;
+  refIngrList.innerHTML = errorListFavCocktail;
 }
 
 function deleteFavIngrFromLS(id) {

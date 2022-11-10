@@ -7,7 +7,8 @@ const instance = axios.create({
 export async function getRandCoctList() {
   try {
     const response = await instance.get('randomselection.php');
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }
@@ -16,7 +17,8 @@ export async function getRandCoctList() {
 export async function getCoctByName(name) {
   try {
     const response = await instance.get(`search.php?s=${name}`);
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }
@@ -25,7 +27,8 @@ export async function getCoctByName(name) {
 export async function getCoctByFirstLet(letter) {
   try {
     const response = await instance.get(`search.php?f=${letter}`);
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }
@@ -34,7 +37,8 @@ export async function getCoctByFirstLet(letter) {
 export async function getCoctById(id) {
   try {
     const response = await instance.get(`lookup.php?i=${id}`);
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }
@@ -43,7 +47,8 @@ export async function getCoctById(id) {
 export async function getIngrByName(name) {
   try {
     const response = await instance.get(`search.php?i=${name}`);
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }
@@ -52,7 +57,8 @@ export async function getIngrByName(name) {
 export async function getIngrById(id) {
   try {
     const response = await instance.get(`lookup.php?iid=${id}`);
-    return response;
+    if (response.status === 200) return response;
+    throw new Error(response.statusText);
   } catch (error) {
     console.log(error);
   }

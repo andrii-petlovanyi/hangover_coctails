@@ -1,7 +1,8 @@
 import { renderMarkup } from '../main';
 import { getCoctByName } from '../../api';
 import { notFound } from '../error';
-import { initPagination } from '../pagination';
+import { initPagination, container } from '../pagination';
+import { refFormSearch } from '../refs';
 import Notiflix from 'notiflix';
 
 export const formSubmitRef = document.querySelector('.header__input');
@@ -18,7 +19,11 @@ export async function onSubmitForm(e) {
     return;
   }
   const { data } = await getCoctByName(searchQuery);
-  if (!data.drinks) return (refCocktailList.innerHTML = notFound);
+  if (!data.drinks) {
+    container.innerHTML = '';
+    refCocktailList.innerHTML = notFound;
+    return;
+  }
   // renderMarkup(data.drinks);
   initPagination(data.drinks, renderMarkup);
 }

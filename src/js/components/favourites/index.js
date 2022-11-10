@@ -3,11 +3,11 @@ import sprite from '../../../images/svg/sprite.svg';
 import { notFound } from '../error';
 import { themeSwitcher } from '../switcher/switcher';
 import { searchCoctById } from '../modal';
+import { errorListFavCocktail } from '../../templates';
+import { refFormSearch, refCocktList } from '../refs';
 
-const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
-const refForm = document.querySelector('.header__input');
-refForm.addEventListener('submit', searchCockt);
+refFormSearch.addEventListener('submit', searchCockt);
 refCocktList.addEventListener('click', deleteCard);
 
 themeSwitcher();
@@ -50,10 +50,7 @@ function renderMarkupList(data = []) {
 }
 
 function renderErrorMarkup() {
-  const mark = `<li class="f-coctails__item">
-              You haven't added any favorite cocktails yet
-            </li>`;
-  refCocktList.innerHTML = mark;
+  refCocktList.innerHTML = errorListFavCocktail;
 }
 
 function deleteFavFromLS(id) {

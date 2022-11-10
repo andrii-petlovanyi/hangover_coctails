@@ -8,6 +8,7 @@ export async function addBtnFavIngr(name) {
     const { strIngredient, strDescription, strAlcohol, strABV, strType } =
       data.ingredients[0];
     const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+    const refModIngr = document.querySelector('.js-mod-ingr-add');
     const ingrArr = {
       strIngredient,
       strDescription,
@@ -20,11 +21,11 @@ export async function addBtnFavIngr(name) {
       if (actArr[i].strIngredient === strIngredient) {
         actArr.splice(i, 1);
         localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
-        addBtnModal();
+        addBtnModal(refModIngr);
         return;
       }
     }
-    removeBtnModal();
+    removeBtnModal(refModIngr);
     actArr.push(ingrArr);
     localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
     console.log(data.ingredients[0]);
@@ -33,23 +34,9 @@ export async function addBtnFavIngr(name) {
   }
 }
 
-export function removeBtnCard(id) {
-  document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Remove
-          <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-heart_full"></use>
-          </svg>`;
+export function removeBtnModal(refModIngr) {
+  refModIngr.textContent = 'Remove from favorite';
 }
-export function addBtnCard(id) {
-  document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Add to
-          <svg class="heart-icon" width="18" height="18">
-            <use href="${sprite}#icon-Heart"></use>
-          </svg>`;
-}
-
-export function removeBtnModal() {
-  document.querySelector('.js-mod-ingr-add').textContent =
-    'Remove from favorite';
-}
-export function addBtnModal() {
-  document.querySelector('.js-mod-ingr-add').textContent = 'Add to favorite';
+export function addBtnModal(refModIngr) {
+  refModIngr.textContent = 'Add to favorite';
 }

@@ -58,6 +58,11 @@ export function renderMarkup(data = []) {
 }
 
 export async function cardBtnListenr(e) {
-  if (e.target.dataset.type) return await searchCoctById(e.target.dataset.id);
+  console.log();
+  if (e.target.dataset.type)
+    return await searchCoctById(
+      e.target.dataset.id,
+      e.target.nextElementSibling
+    );
   if (e.target.dataset.add) return await btnAddFav(e.target.dataset.favid);
 }
