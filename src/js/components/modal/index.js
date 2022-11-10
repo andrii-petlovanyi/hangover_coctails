@@ -1,5 +1,5 @@
 import { getCoctById } from '../../api';
-import { cardBtnListenr } from '../main';
+// import { cardBtnListenr } from '../main';
 import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
 import { onClickIngr } from './modalIngr';
 import sprite from '../../../images/svg/sprite.svg';
@@ -83,7 +83,7 @@ export function closeModal(e) {
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
-  document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
+  // document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
   document.querySelector('.backdrop').remove();
   ingrList = [];
   ingrNameList = [];
