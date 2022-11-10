@@ -10,7 +10,7 @@ const refForm = document.querySelector('.header__input');
 refForm.addEventListener('submit', searchCockt);
 refCocktList.addEventListener('click', deleteCard);
 
-themeSwitcher()
+themeSwitcher();
 
 if (actArr.length) {
   renderMarkupList(actArr);
@@ -18,8 +18,7 @@ if (actArr.length) {
   renderErrorMarkup();
 }
 
-
-function deleteCard(e) {
+async function deleteCard(e) {
   if (e.target.tagName !== 'BUTTON') return;
   if (e.target.dataset.favid) {
     deleteFavFromLS(e.target.dataset.favid);
