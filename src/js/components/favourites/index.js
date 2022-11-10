@@ -1,6 +1,7 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 import { notFound } from '../error';
+import { initTheme, resetTheme } from '../switcher/switcher';
 import * as modal from '../modal';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
@@ -13,6 +14,15 @@ if (actArr.length) {
   renderMarkupList(actArr);
 } else {
   renderErrorMarkup();
+}
+
+let themeSwitch = document.getElementById('themeSwitch');
+if (themeSwitch) {
+  initTheme();
+
+  themeSwitch.addEventListener('change', function (event) {
+    resetTheme();
+  });
 }
 
 async function deleteCard(e) {
