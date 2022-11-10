@@ -1,6 +1,7 @@
 import { getCoctByFirstLet } from '../../api';
 import { notFound } from '../error';
 import sprite from '../../../images/svg/sprite.svg';
+import { initPagination } from '../pagination';
 
 const FAV_COCKTAIL = 'favourites_coctails';
 export const lettersListRef = document.querySelector(`.hero__list`);
@@ -27,7 +28,8 @@ async function addMarkup(letter) {
     if (!data.drinks) {
       return renderError(notFound);
     }
-    renderMarkup(data.drinks);
+    // renderMarkup(data.drinks);
+    initPagination(data.drinks, renderMarkup);
   } catch (error) {}
 }
 

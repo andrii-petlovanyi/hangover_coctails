@@ -1,6 +1,7 @@
 import { renderMarkup } from '../main';
 import { getCoctByName } from '../../api';
 import { notFound } from '../error';
+import { initPagination } from '../pagination';
 import Notiflix from 'notiflix';
 
 export const formSubmitRef = document.querySelector('.header__input');
@@ -18,5 +19,6 @@ export async function onSubmitForm(e) {
   }
   const { data } = await getCoctByName(searchQuery);
   if (!data.drinks) return (refCocktailList.innerHTML = notFound);
-  renderMarkup(data.drinks);
+  // renderMarkup(data.drinks);
+  initPagination(data.drinks, renderMarkup);
 }
