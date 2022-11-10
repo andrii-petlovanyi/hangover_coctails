@@ -22,7 +22,7 @@
 
     <form class="header__input">
       <button class="input__btn" type="submit"></button>
-      <svg class="input__icon" width="18.71" height="18.71">
+      <svg class="input__icon" width="24" height="24">
         <use href="./images/svg/sprite.svg#icon-search"></use>
       </svg>
       <input
@@ -43,37 +43,47 @@
             <div class="menu__logo">
               <img src="./images/svg/logo.svg" width="123.35" height="34" />
             </div>
+            <div class="menu__switcher">
+              <span>light</span>
+              <div class="switch">
+                <input class="switch__input" type="checkbox" id="themeSwitch" />
+                <label aria-hidden="true" class="switch__label" for="themeSwitch"></label>
+                <div aria-hidden="true" class="switch__marker"></div>
+              </div>
+              <span>dark</span>
+            </div>
             <button type="button" class="menu__close">
-              <svg class="close__icon" width="17.78" height="17.78">
+              <svg class="close__icon" width="18" height="18">
                 <use href="./images/svg/sprite.svg#icon-close-burger"></use>
               </svg>
             </button>
-
           </div>
-          <button type="button" class="menu__close">
-            <svg class="close__icon" width="17.78" height="17.78">
-              <use href="./images/svg/sprite.svg#icon-close-burger"></use>
-            </svg>
-          </button>
+          <div class="menu__input">
+            <form class="menu__form">
+              <button class="form__btn" type="submit"></button>
+              <svg class="form__icon" width="24" height="24">
+                <use href="./images/svg/sprite.svg#icon-search"></use>
+              </svg>
+              <input type="text" id="coctail-finder" name="finder" class="search__input" placeholder="Search" />
+            </form>
+          </div>
+            <nav class="nav__mobile">
+              <a class="home__link" href="./index.html">Home</a>
+              <div class="js-menu">
+                <a class="favorite__link" href="#">Favorite</a>
+                <div class="favorite__bar">
+                  <ul class="bar__list">
+                    <li class="cocktails__item">
+                      <a class="cocktails__link" href="./f_coctail.html">Favorite cocktails</a>
+                    </li>
+                    <li class="ingredients__item">
+                      <a class="ingredients__link" href="./f_ingredients.html">Favorite ingredients</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
         </div>
-        <div class="menu__input">
-          <label class="finder__box" for="finder">
-            <input
-              type="text"
-              id="cocktail-finder"
-              name="finder"
-              class="cocktail__finder"
-              placeholder="Search"
-            />
-            <svg class="finder__icon" width="18.71" height="18.71">
-              <use href="./images/svg/sprite.svg#icon-search"></use>
-            </svg>
-          </label>
-        </div>
-        <ul class="menu__list">
-          <li><a class="menu__link" href="">Home</a></li>
-          <li><a class="menu__link" href="">Favorite</a></li>
-        </ul>
       </div>
     </div>
   </div>
