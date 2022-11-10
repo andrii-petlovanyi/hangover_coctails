@@ -42,7 +42,7 @@ function renderMarkup(data = []) {
     .map(({ strIngredient, strType }) => {
       return `<li class="ingredients-card">
           <h3 class="ingredients__name">${strIngredient}</h3>
-          <h5 class="ingredients__type">${strType}</h5>
+          <h5 class="ingredients__type">${strType ? strType : 'no info'}</h5>
           <div class="ingredients-card__options">
             <button class="button-learn_more" data-name="${strIngredient}">Learn more</button>
             <button class="button-remove" data-fav=${strIngredient}>
