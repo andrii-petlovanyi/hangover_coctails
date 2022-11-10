@@ -1,6 +1,6 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
-import { searchCoctById } from '../modal/';
+// import { searchCoctById } from '../modal/';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
@@ -19,7 +19,7 @@ async function deleteCard(e) {
     e.target.parentNode.parentNode.remove();
     return;
   }
-  if (e.target.dataset.type) await searchCoctById(e.target.dataset.id);
+  // if (e.target.dataset.type) await searchCoctById(e.target.dataset.id);
 }
 
 function renderMarkupList(data = []) {
