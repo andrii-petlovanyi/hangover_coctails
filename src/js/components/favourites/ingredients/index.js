@@ -1,9 +1,12 @@
 import { FAV_INGREDIENTS } from './fav_ingredients';
 import sprite from '../../../../images/svg/sprite.svg';
+import { notFound } from '../../error';
 import { searchIngrByName } from '../../modal/modalIngr';
 
 const refIngrList = document.querySelector('.ingredients-list');
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+const refForm = document.querySelector('.header__input');
+refForm.addEventListener('submit', searchCockt);
 
 refIngrList.addEventListener('click', chooseBtnIngr);
 
@@ -61,4 +64,17 @@ function deleteFavIngrFromLS(id) {
       return;
     }
   }
+}
+
+function searchCockt(e) {
+  e.preventDefault();
+  const searchQ = e.currentTarget.finder.value.trim();
+  if (!searchQ) return;
+  console.log(actArr);
+  const result = actArr.filter(el =>
+    el.strIngredient.toLowerCase().includes(searchQ.toLowerCase())
+  );
+
+  if (!result.length) return (refIngrList.innerHTML = notFound);
+  renderMarkup(result);
 }

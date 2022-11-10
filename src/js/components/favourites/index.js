@@ -1,9 +1,12 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
+import { notFound } from '../error';
 import * as modal from '../modal/';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+const refForm = document.querySelector('.header__input');
+refForm.addEventListener('submit', searchCockt);
 refCocktList.addEventListener('click', deleteCard);
 
 if (actArr.length) {
@@ -59,4 +62,17 @@ function deleteFavFromLS(id) {
       return;
     }
   }
+}
+
+function searchCockt(e) {
+  e.preventDefault();
+  const searchQ = e.currentTarget.finder.value.trim();
+  if (!searchQ) return;
+  console.log(actArr);
+  const result = actArr.filter(el =>
+    el.strDrink.toLowerCase().includes(searchQ.toLowerCase())
+  );
+
+  if (!result.length) return (refCocktList.innerHTML = notFound);
+  renderMarkupList(result);
 }
