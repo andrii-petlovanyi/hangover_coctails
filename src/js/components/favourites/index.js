@@ -2,7 +2,7 @@ import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 import { notFound } from '../error';
 import { initTheme, resetTheme } from '../switcher/switcher';
-import * as modal from '../modal';
+// import * as modal from '../modal';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
@@ -32,7 +32,7 @@ async function deleteCard(e) {
     e.target.parentNode.parentNode.remove();
     return;
   }
-  if (e.target.dataset.type) await modal.searchCoctById(e.target.dataset.id);
+  // if (e.target.dataset.type) await modal.searchCoctById(e.target.dataset.id);
 }
 
 function renderMarkupList(data = []) {
