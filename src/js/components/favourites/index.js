@@ -19,7 +19,7 @@ async function deleteCard(e) {
     e.target.parentNode.parentNode.remove();
     return;
   }
-  if (e.target.dataset.type) await modal.searchCoctById(e.target.dataset.id);
+  // if (e.target.dataset.type) await modal.searchCoctById(e.target.dataset.id);
 }
 
 function renderMarkupList(data = []) {
