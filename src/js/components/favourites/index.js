@@ -25,7 +25,7 @@ if (themeSwitch) {
   });
 }
 
-async function deleteCard(e) {
+function deleteCard(e) {
   if (e.target.tagName !== 'BUTTON') return;
   if (e.target.dataset.favid) {
     deleteFavFromLS(e.target.dataset.favid);
