@@ -1,5 +1,5 @@
 // SWITCHER
-export const refSwitcher = document.getElementById('themeSwitch');
+export const refSwitcher = document.querySelector('.themeSwitch');
 export function themeSwitcher() {
   if (refSwitcher) {
     initTheme();
