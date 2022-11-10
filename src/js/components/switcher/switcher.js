@@ -1,12 +1,12 @@
 // SWITCHER
-// let themeSwitch = document.getElementById('themeSwitch');
-// if (themeSwitch) {
-//   initTheme();
+let themeSwitch = document.getElementById('themeSwitch');
+if (themeSwitch) {
+  initTheme();
 
-//   themeSwitch.addEventListener('change', function (event) {
-//     resetTheme();
-//   });
-// }
+  themeSwitch.addEventListener('change', function (event) {
+    resetTheme();
+  });
+}
 
 export function initTheme() {
   var darkThemeSelected =
