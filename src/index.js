@@ -8,22 +8,15 @@ import {
   refCocktailList,
   onSubmitForm,
 } from './js/components/header/inputform';
+import { themeSwitcher } from './js/components/switcher/switcher';
 //
 
 getListCard();
+themeSwitcher();
 
 //
+
 refCocktailList.addEventListener('click', cardBtnListenr);
 
 lettersListRef.addEventListener(`click`, chooseLetter);
 formSubmitRef.addEventListener('submit', onSubmitForm);
-
-import { initTheme, resetTheme } from './js/components/switcher/switcher';
-let themeSwitch = document.getElementById('themeSwitch');
-if (themeSwitch) {
-  initTheme();
-
-  themeSwitch.addEventListener('change', function (event) {
-    resetTheme();
-  });
-}

@@ -1,7 +1,7 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
 import { notFound } from '../error';
-import { initTheme, resetTheme } from '../switcher/switcher';
+import { themeSwitcher } from '../switcher/switcher';
 import { searchCoctById } from '../modal';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
@@ -10,20 +10,14 @@ const refForm = document.querySelector('.header__input');
 refForm.addEventListener('submit', searchCockt);
 refCocktList.addEventListener('click', deleteCard);
 
+themeSwitcher()
+
 if (actArr.length) {
   renderMarkupList(actArr);
 } else {
   renderErrorMarkup();
 }
 
-let themeSwitch = document.getElementById('themeSwitch');
-if (themeSwitch) {
-  initTheme();
-
-  themeSwitch.addEventListener('change', function (event) {
-    resetTheme();
-  });
-}
 
 function deleteCard(e) {
   if (e.target.tagName !== 'BUTTON') return;

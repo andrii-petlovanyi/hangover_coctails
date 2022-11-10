@@ -1,7 +1,7 @@
 import { FAV_INGREDIENTS } from './fav_ingredients';
 import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
-import { initTheme, resetTheme } from '../../switcher/switcher';
+import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
 
 const refIngrList = document.querySelector('.ingredients-list');
@@ -11,14 +11,7 @@ refForm.addEventListener('submit', searchCockt);
 
 refIngrList.addEventListener('click', chooseBtnIngr);
 
-let themeSwitch = document.getElementById('themeSwitch');
-if (themeSwitch) {
-  initTheme();
-
-  themeSwitch.addEventListener('change', function (event) {
-    resetTheme();
-  });
-}
+themeSwitcher();
 
 function chooseBtnIngr(e) {
   if (e.target.tagName !== 'BUTTON') return;
