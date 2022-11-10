@@ -4,8 +4,8 @@ import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
 import { onClickIngr } from './modalIngr';
 import sprite from '../../../images/svg/sprite.svg';
 
-let ingrList = [];
-let ingrNameList = [];
+export let ingrList = [];
+export let ingrNameList = [];
 
 export async function searchCoctById(id) {
   try {
