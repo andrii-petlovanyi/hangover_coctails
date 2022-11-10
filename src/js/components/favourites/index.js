@@ -1,18 +1,41 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
-import { cardBtnListenr } from '../main';
+import { notFound } from '../error';
+import { initTheme, resetTheme } from '../switcher/switcher';
+import * as modal from '../modal';
 
-const refCocktailList = document.querySelector('.coctails-list');
+const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
-refCocktailList.addEventListener('click', cardBtnListenr);
+const refForm = document.querySelector('.header__input');
+refForm.addEventListener('submit', searchCockt);
+refCocktList.addEventListener('click', deleteCard);
 
 if (actArr.length) {
-  renderMarkup(actArr);
+  renderMarkupList(actArr);
 } else {
   renderErrorMarkup();
 }
 
-function renderMarkup(data = []) {
+let themeSwitch = document.getElementById('themeSwitch');
+if (themeSwitch) {
+  initTheme();
+
+  themeSwitch.addEventListener('change', function (event) {
+    resetTheme();
+  });
+}
+
+async function deleteCard(e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  if (e.target.dataset.favid) {
+    deleteFavFromLS(e.target.dataset.favid);
+    e.target.parentNode.parentNode.remove();
+    return;
+  }
+  if (e.target.dataset.type) await modal.searchCoctById(e.target.dataset.id);
+}
+
+function renderMarkupList(data = []) {
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
       return `<li class="coctail-card">
@@ -30,16 +53,36 @@ function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  document
-    .querySelector('.js-add_f-coctail')
-    .insertAdjacentHTML('beforeend', mark);
+  refCocktList.innerHTML = mark;
 }
 
 function renderErrorMarkup() {
   const mark = `<li class="f-coctails__item">
               You haven't added any favorite cocktails yet
             </li>`;
-  document
-    .querySelector('.js-add_f-coctail')
-    .insertAdjacentHTML('beforeend', mark);
+  refCocktList.innerHTML = mark;
+}
+
+function deleteFavFromLS(id) {
+  const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  for (let i = 0; i < actArr.length; i++) {
+    if (actArr[i].idDrink === id) {
+      actArr.splice(i, 1);
+      localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
+      return;
+    }
+  }
+}
+
+function searchCockt(e) {
+  e.preventDefault();
+  const searchQ = e.currentTarget.finder.value.trim();
+  if (!searchQ) return;
+  console.log(actArr);
+  const result = actArr.filter(el =>
+    el.strDrink.toLowerCase().includes(searchQ.toLowerCase())
+  );
+
+  if (!result.length) return (refCocktList.innerHTML = notFound);
+  renderMarkupList(result);
 }

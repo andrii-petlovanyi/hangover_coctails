@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favoutites Ingredients - Coctails</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <script
+      type="module"
+      src="./js/components/favourites/ingredients/index.js"
+    ></script>
   </head>
   <body>
     <include src="./partials/_header.html"></include>
@@ -14,11 +17,7 @@
       <section class="f_ingredients">
         <div class="container f_ingredients__container">
           <h1 class="f_ingredients__title">Favorite ingredients</h1>
-          <ul class="js-f_ingredients">
-            <li class="f_ingredients__item">
-              You haven't added any favorite ingridients yet
-            </li>
-          </ul>
+          <ul class="ingredients-list"></ul>
         </div>
       </section>
     </main>

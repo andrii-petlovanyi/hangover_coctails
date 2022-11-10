@@ -19,6 +19,7 @@
     </div>
   </div>
 </nav>
+
     <form class="header__input">
       <button class="input__btn" type="submit"></button>
       <svg class="input__icon" width="18.71" height="18.71">
@@ -32,6 +33,7 @@
         placeholder="Search"
       />
     </form>
+
       <div class="nav__burger">
         <svg class="menu__icon" width="30" height="16">
           <use href="./images/svg/sprite.svg#icon-burger"></use>
@@ -46,21 +48,45 @@
                 <use href="./images/svg/sprite.svg#icon-close-burger"></use>
               </svg>
             </button>
+
           </div>
-          <div class="menu__input">
-            <label class="finder__box" for="finder">
-            <input type="text" id="cocktail-finder" name="finder" class="cocktail__finder" placeholder="Search" />
+          <button type="button" class="menu__close">
+            <svg class="close__icon" width="17.78" height="17.78">
+              <use href="./images/svg/sprite.svg#icon-close-burger"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="menu__input">
+          <label class="finder__box" for="finder">
+            <input
+              type="text"
+              id="cocktail-finder"
+              name="finder"
+              class="cocktail__finder"
+              placeholder="Search"
+            />
             <svg class="finder__icon" width="18.71" height="18.71">
               <use href="./images/svg/sprite.svg#icon-search"></use>
             </svg>
-            </label>
-          </div>
-          <ul class="menu__list">
-            <li><a class="menu__link" href="">Home</a></li>
-            <li><a class="menu__link" href="">Favorite</a></li>
-          </ul>
+          </label>
         </div>
+        <ul class="menu__list">
+          <li><a class="menu__link" href="">Home</a></li>
+          <li><a class="menu__link" href="">Favorite</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+
+  <div class="switcher">
+    <span>light</span>
+    <div class="switch">
+      <input class="switch__input" type="checkbox" id="themeSwitch" />
+      <label aria-hidden="true" class="switch__label" for="themeSwitch"></label>
+      <div aria-hidden="true" class="switch__marker"></div>
+    </div>
+    <span>dark</span>
+  </div>
+
   <script type="module" src="./js/components/header/favorite_bar.js"></script>
 </header>
