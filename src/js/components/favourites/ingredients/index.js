@@ -38,7 +38,7 @@ function renderMarkup(data = []) {
           <h5 class="ingredients__type">${strType ? strType : 'no info'}</h5>
           <div class="ingredients-card__options">
             <button class="button-learn_more" data-name="${strIngredient}">Learn more</button>
-            <button class="button-remove" data-fav=${strIngredient}>
+            <button class="button-remove" data-fav="${strIngredient}">
               Remove
               <svg class="heart-icon" width="18" height="18">
                 <use href="${sprite}#icon-heart_full" ></use>
@@ -64,6 +64,7 @@ function deleteFavIngrFromLS(id) {
     if (actArr[i].strIngredient === id) {
       actArr.splice(i, 1);
       localStorage.setItem(FAV_INGREDIENTS, JSON.stringify(actArr));
+      checkAfterDelIngr();
       return;
     }
   }
@@ -73,11 +74,15 @@ function searchCockt(e) {
   e.preventDefault();
   const searchQ = e.currentTarget.finder.value.trim();
   if (!searchQ) return;
-  console.log(actArr);
   const result = actArr.filter(el =>
     el.strIngredient.toLowerCase().includes(searchQ.toLowerCase())
   );
 
   if (!result.length) return (refIngrList.innerHTML = notFound);
   renderMarkup(result);
+}
+
+function checkAfterDelIngr() {
+  const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+  if (!actArr.length) return renderErrorMarkup();
 }

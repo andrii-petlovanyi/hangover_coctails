@@ -62,6 +62,7 @@ function deleteFavFromLS(id) {
     if (actArr[i].idDrink === id) {
       actArr.splice(i, 1);
       localStorage.setItem(FAV_COCKTAIL, JSON.stringify(actArr));
+      checkAfterDelCockt();
       return;
     }
   }
@@ -78,4 +79,9 @@ function searchCockt(e) {
 
   if (!result.length) return (refCocktList.innerHTML = notFound);
   renderMarkupList(result);
+}
+
+function checkAfterDelCockt() {
+  const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  if (!actArr.length) return renderErrorMarkup();
 }
