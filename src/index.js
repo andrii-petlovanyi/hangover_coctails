@@ -8,6 +8,14 @@ import {
   refCocktailList,
   onSubmitForm,
 } from './js/components/header/inputform';
+import {
+  refHeaderJSMenu,
+  refHeaderFavLink,
+  refHeaderFavBar,
+  refHeaderMenuOpen,
+  refHeaderMenuClose,
+  refHeaderMobMenu,
+} from './js/components/refs';
 import { themeSwitcher } from './js/components/switcher/switcher';
 //
 
@@ -20,3 +28,21 @@ refCocktailList.addEventListener('click', cardBtnListenr);
 
 lettersListRef.addEventListener(`click`, chooseLetter);
 formSubmitRef.addEventListener('submit', onSubmitForm);
+
+refHeaderJSMenu.addEventListener('mouseleave', () => {
+  refHeaderFavBar.classList.remove('active');
+});
+
+refHeaderFavLink.addEventListener('mouseenter', () => {
+  refHeaderFavBar.classList.add('active');
+});
+
+refHeaderMenuOpen.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+refHeaderMenuClose.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});

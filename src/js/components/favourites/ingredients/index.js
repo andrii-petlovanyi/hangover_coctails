@@ -3,12 +3,43 @@ import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
 import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
-import { refIngrList, refFormSearch } from '../../refs';
+import {
+  refIngrList,
+  refFormSearch,
+  refHeaderJSMenu,
+  refHeaderFavLink,
+  refHeaderFavBar,
+  refHeaderMenuOpen,
+  refHeaderMenuClose,
+  refHeaderMobMenu,
+} from '../../refs';
 import { errorListFavCocktail } from '../../../templates';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
 refFormSearch.addEventListener('submit', searchCockt);
 refIngrList.addEventListener('click', chooseBtnIngr);
+
+//header
+
+refHeaderJSMenu.addEventListener('mouseleave', () => {
+  refHeaderFavBar.classList.remove('active');
+});
+
+refHeaderFavLink.addEventListener('mouseenter', () => {
+  refHeaderFavBar.classList.add('active');
+});
+
+refHeaderMenuOpen.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+refHeaderMenuClose.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+// header
 
 themeSwitcher();
 

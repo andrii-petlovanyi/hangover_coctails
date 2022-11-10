@@ -4,11 +4,42 @@ import { notFound } from '../error';
 import { themeSwitcher } from '../switcher/switcher';
 import { searchCoctById } from '../modal';
 import { errorListFavCocktail } from '../../templates';
-import { refFormSearch, refCocktList } from '../refs';
+import {
+  refFormSearch,
+  refCocktList,
+  refHeaderJSMenu,
+  refHeaderFavLink,
+  refHeaderFavBar,
+  refHeaderMenuOpen,
+  refHeaderMenuClose,
+  refHeaderMobMenu,
+} from '../refs';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
 refFormSearch.addEventListener('submit', searchCockt);
 refCocktList.addEventListener('click', deleteCard);
+
+//header
+
+refHeaderJSMenu.addEventListener('mouseleave', () => {
+  refHeaderFavBar.classList.remove('active');
+});
+
+refHeaderFavLink.addEventListener('mouseenter', () => {
+  refHeaderFavBar.classList.add('active');
+});
+
+refHeaderMenuOpen.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+refHeaderMenuClose.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+// header
 
 themeSwitcher();
 
