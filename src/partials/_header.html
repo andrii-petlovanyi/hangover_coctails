@@ -1,18 +1,24 @@
-<header>
+<header class="box">
   <div class="header__flex">
     <div class="header__logo">
       <img src="./images/svg/logo.svg" width="123.35" height="34" />
     </div>
-    <nav class="nav__desktop">
-      <a class="home__link" href="./index.html">Home</a>
-      <a class="favorite__link" href="#">Favorite</a>
-      <div class="favorite__bar">
-        <ul class="bar__list">
-          <li class="cocktails__item"><a class="cocktails__link" href="./f_coctail.html">Favorite cocktails</a></li>
-          <li class="ingredients__item"><a class="ingredients__link" href="./f_ingredients.html">Favorite ingredients</a></li>
-        </ul>
-      </div>
-    </nav>
+<nav class="nav__desktop">
+  <a class="home__link" href="./index.html">Home</a>
+  <div class="js-menu">
+    <a class="favorite__link" href="#">Favorite</a>
+    <div class="favorite__bar">
+      <ul class="bar__list">
+        <li class="cocktails__item">
+          <a class="cocktails__link" href="./f_coctail.html">Favorite cocktails</a>
+        </li>
+        <li class="ingredients__item">
+          <a class="ingredients__link" href="./f_ingredients.html">Favorite ingredients</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <form class="header__input">
       <button class="input__btn" type="submit"></button>
       <svg class="input__icon" width="18.71" height="18.71">
@@ -30,7 +36,7 @@
         <svg class="menu__icon" width="30" height="16">
           <use href="./images/svg/sprite.svg#icon-burger"></use>
         </svg>
-        <div class="mobile__menu">
+        <div class="mobile__menu box">
           <div class="menu__box">
             <div class="menu__logo">
               <img src="./images/svg/logo.svg" width="123.35" height="34" />

@@ -1,9 +1,9 @@
-document.querySelector('.favorite__link').addEventListener('click', () => {
-    document.querySelector('.favorite__bar').classList.toggle('active');
+document.querySelector('.js-menu').addEventListener('mouseleave', () => {
+  document.querySelector('.favorite__bar').classList.remove('active');
 });
 
-document.querySelector('.favorite__link').addEventListener('mouseover', () => {
-    document.querySelector('.favorite__bar').classList.toggle('active');
+document.querySelector('.favorite__link').addEventListener('mouseenter', () => {
+  document.querySelector('.favorite__bar').classList.add('active');
 });
 
 document.querySelector(".menu__icon").addEventListener("click", () => {
