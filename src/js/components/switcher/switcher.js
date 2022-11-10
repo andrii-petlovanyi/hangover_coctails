@@ -1,11 +1,13 @@
 // SWITCHER
-let themeSwitch = document.getElementById('themeSwitch');
-if (themeSwitch) {
-  initTheme();
+export const refSwitcher = document.getElementById('themeSwitch');
+export function themeSwitcher() {
+  if (refSwitcher) {
+    initTheme();
 
-  themeSwitch.addEventListener('change', function (event) {
-    resetTheme();
-  });
+    refSwitcher.addEventListener('change', function () {
+      resetTheme();
+    });
+  }
 }
 
 export function initTheme() {
@@ -13,7 +15,7 @@ export function initTheme() {
     localStorage.getItem('themeSwitch') !== null &&
     localStorage.getItem('themeSwitch') === 'dark';
 
-  themeSwitch.checked = darkThemeSelected;
+  refSwitcher.checked = darkThemeSelected;
 
   darkThemeSelected
     ? document.body.setAttribute('data-theme', 'dark')
@@ -21,7 +23,7 @@ export function initTheme() {
 }
 
 export function resetTheme() {
-  if (themeSwitch.checked) {
+  if (refSwitcher.checked) {
     document.body.setAttribute('data-theme', 'dark');
 
     localStorage.setItem('themeSwitch', 'dark');

@@ -3,6 +3,8 @@ import { FAV_COCKTAIL, btnAddFav } from '../favourites/fav_cocktails';
 import { searchCoctById } from '../modal';
 import sprite from '../../../images/svg/sprite.svg';
 
+export const refMainList = document.querySelector('.js-main-coct');
+
 export async function getListCard() {
   try {
     const { data } = await getRandCoctList();
@@ -52,7 +54,7 @@ export function renderMarkup(data = []) {
     </li>`;
     })
     .join('');
-  document.querySelector('.js-main-coct').innerHTML = mark;
+  refMainList.innerHTML = mark;
 }
 
 export async function cardBtnListenr(e) {
