@@ -1,16 +1,20 @@
 .box {
-  @media screen and (min-width: 479.9px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  @media screen and (min-width: 767.9px) {
-    padding-right: 32px;
-    padding-left: 32px;
-  }
-  @media screen and (min-width: 1279.9px) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+
+  padding-left: 20px;
+  padding-right: 20px;
+@media screen and (min-width: 479.9px) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 767.9px) {
+  padding-right: 32px;
+  padding-left: 32px;
+}
+@media screen and (min-width: 1279.9px) {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 }
 
 .header__flex {
@@ -63,6 +67,7 @@
   display: none;
   @media screen and (min-width: $tablet) {
     display: block;
+    margin-right: 60px;
   }
 }
 
@@ -76,18 +81,29 @@
   top: 0;
   left: 0;
   background-color: white;
-  justify-content: center;
-  align-items: center;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 22px;
   transition-duration: 2300ms;
   &.open {
-    display: block;
+    display: flex;
     visibility: visible;
+    flex-direction: column;
     opacity: 1;
   }
 }
+
+.nav__mobile {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 32px;
+  @media screen and (min-width: $tablet) {
+    align-items: center;
+  }
+}
+
+
 
 .js__menu {
   padding: 15px 0;
@@ -96,8 +112,10 @@
 .menu__close {
   background-color: transparent;
   border: 0;
-  margin-top: 20px;
   left: 90%;
+
+  margin-left: auto;
+
   @media screen and (min-width: $tablet) {
     margin-right: 20px;
     margin-top: 0;
@@ -111,22 +129,18 @@
 }
 
 .menu__input {
-  display: flex;
-  align-items: center;
-  margin-top: 37px;
-  margin-bottom: 40px;
-  position: relative;
-  width: auto;
+display: flex;
   &::after {
-    position: absolute;
+    position: relative;
     content: '';
     width: 1px;
-    height: 39px;
+    height: 40px;
     background-color: #fd5103;
-    top: 0;
-    left: 40px;
+    right: 315px;
   }
-  @media screen and (min-width: $tablet) {
+
+  @media screen and (min-width: $tablet){
+
     display: none;
   }
 }
@@ -149,8 +163,29 @@
   }
 }
 
-.menu__list {
+.menu__form {
   display: flex;
+  position: relative;
+  left: -64px;
+}
+
+.form__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 64px;
+  background-color: transparent;
+  border: 0;
+}
+
+.form__icon {
+  position: relative;
+  left: 30px;
+  top: 6px;
+}
+
+.menu__list {
+  display: none;
   flex-direction: column;
   gap: 32px;
   @media screen and (min-width: $tablet) {
@@ -262,6 +297,10 @@
 
 .ingredients__link {
   padding: 12px;
+}
+
+.menu__switcher {
+  display: flex;
 }
 
 .overflow {
