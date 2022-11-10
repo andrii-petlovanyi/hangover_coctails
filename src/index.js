@@ -34,12 +34,18 @@ if (themeSwitch) {
         .querySelector('.hero__search')
         .setAttribute('data-theme', 'dark-text');
       document
+        .querySelector('.cocktails__link')
+        .setAttribute('data-theme', 'dark');
+      document
         .querySelector('.main-title')
         .setAttribute('data-theme', 'dark-text');
     } else {
       document
         .querySelector('.hero__search')
         .removeAttribute('data-theme', 'dark-text');
+      document
+        .querySelector('.cocktails__link')
+        .removeAttribute('data-theme', 'dark');
       document
         .querySelector('.main-title')
         .removeAttribute('data-theme', 'dark-text');
@@ -57,6 +63,9 @@ if (themeSwitch) {
         .querySelector('.hero__search')
         .setAttribute('data-theme', 'dark-text');
       document
+        .querySelector('.cocktails__link')
+        .setAttribute('data-theme', 'dark');
+      document
         .querySelector('.main-title')
         .setAttribute('data-theme', 'dark-text');
 
@@ -66,6 +75,9 @@ if (themeSwitch) {
       document
         .querySelector('.hero__search')
         .removeAttribute('data-theme', 'dark-text');
+      document
+        .querySelector('.cocktails__link')
+        .removeAttribute('data-theme', 'dark');
       document
         .querySelector('.main-title')
         .removeAttribute('data-theme', 'dark-text');

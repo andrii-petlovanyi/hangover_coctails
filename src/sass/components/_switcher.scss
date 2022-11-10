@@ -13,6 +13,10 @@
   color: white;
 }
 
+[data-theme='dark-back'] {
+  background-color: black;
+}
+
 $switch-width: 64px;
 $switch-height: 32px;
 $switch-padding: 3px;
