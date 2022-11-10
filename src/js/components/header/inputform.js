@@ -14,7 +14,7 @@ export async function onSubmitForm(e) {
   e.preventDefault();
   searchQuery = e.currentTarget.finder.value.trim();
   if (!searchQuery) {
-    Notiflix.Notify.warning('Sorry, please enter the name of the cocktail.');
+    Notiflix.Notify.failure('Sorry, please enter the name of the cocktail.');
     return;
   }
   const { data } = await getCoctByName(searchQuery);

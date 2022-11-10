@@ -64,6 +64,7 @@ export function renderCardsWithPagination(
 ) {
   if (cards.length <= perPage) {
     // renderCards(container, cards);
+    container.innerHTML = '';
     renderCards(cards);
   } else {
     const pages = transformDataToPages(perPage, cards);
