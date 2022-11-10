@@ -7,6 +7,39 @@
 [data-theme='dark'] {
   background-color: black;
   color: white;
+
+  .cocktails__link {
+    color: white;
+  }
+
+  .coctail-card__name {
+    color: white;
+  }
+
+  .hero__search {
+    color: white;
+  }
+
+  .main-title {
+    color: white;
+  }
+
+  .button-add_to {
+    background-color: black;
+  }
+
+  .heart-icon {
+    fill: black;
+  }
+
+  .modal {
+    color: white;
+    background-color: black;
+  }
+
+  .modal__close {
+    fill: white;
+  }
 }
 
 [data-theme='dark-text'] {
