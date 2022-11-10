@@ -34,7 +34,9 @@ export async function btnAddFav(id, type) {
     } else {
       removeBtnModal(idDrink);
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 export function removeBtnCard(id) {
   document.querySelector(`button[data-favid="${id}"]`).innerHTML = `Remove

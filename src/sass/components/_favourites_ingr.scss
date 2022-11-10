@@ -1,69 +1,79 @@
-.f_ingredients__title{
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 22px;
-line-height: 42px;
-text-align: center;
-color: #202025;
-max-width: 224px;
-@media screen and (min-width: $tablet) {
+.f_ingredients__title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 42px;
+  text-align: center;
+  color: #202025;
+  max-width: 224px;
+  @media screen and (min-width: $tablet) {
     font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 38px;
-text-align: center;
-color: #202025;
-max-width: 493px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #202025;
+    max-width: 493px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    color: #000000;
+    max-width: 627px;
+  }
 }
-@media screen and (min-width: $desktop) {
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 48px;
-line-height: 72px;
-text-align: center;    
-color: #000000;
-max-width: 627px;
+.f_ingredients__item {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: #202025;
+  max-width: 239px;
+
+  @media screen and (min-width: $tablet) {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    color: #202025;
+    max-width: 296px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 72px;
+    text-align: center;
+    color: #202025;
+    max-width: 385px;
+  }
+}
+.f_ingredients__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-}
-.f_ingredients__item{
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 60px;
-text-align: center;    
-color: #202025;
-max-width: 239px;
+.f_ingredients {
+  margin-top: 60px;
 
-@media screen and (min-width: $tablet) {
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 60px;
-text-align: center;
-color: #202025;
-max-width: 296px;
-}
-@media screen and (min-width: $desktop) {
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 72px;
-text-align: center;
-color: #202025;
-max-width: 385px;
-}
-}
-.f_ingredients__container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  @media screen and (min-width: $tablet) {
+    margin-top: 68px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 69px;
+  }
 }

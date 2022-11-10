@@ -22,7 +22,7 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  color: #fd5103;
+  color: $accent-mod-text-color;
   font-size: 22px;
   line-height: 1.91;
   display: flex;
@@ -78,14 +78,15 @@
 
 .hero__input {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
-  padding: 10px 5px 8px 5px;
+  position: relative;
+  padding: 5px 8px 5px 10px;
   cursor: pointer;
 
   width: 93px;
   height: 34px;
-  border: 1px solid #fd5103;
+  border: 1px solid $accent-mod-text-color;
   border-radius: 4px;
 
   @media screen and (min-width: $tablet) {
@@ -102,40 +103,23 @@
   }
 }
 
-.hero__svg {
-  display: flex;
-  position: absolute;
-  color: inherit;
-
-  @media screen and (min-width: $tablet) {
+.hero__js-letter {
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    width: 36px;
+    height: 22px;
+    display: flex;
     position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
+    top: 7px;
+    left: 5px;
   }
-  // @media screen and (max-width: 767.99px) {
-  //     display: flex;
-  // position: absolute;
-  // }
-}
-
-.hero__input:active,
-hero__input:hover,
-hero__input:focus {
-  background: #fd5103;
-  color: #fcfcfc;
 }
 
 .hero__list {
   @media screen and (max-width: $mobile) {
-    border: 1px solid #fd5103;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -145,28 +129,28 @@ hero__input:focus {
       visibility: visible;
       opacity: 1;
       transition-duration: 300ms;
-      //   top: 60px;
-      //   left: 320px;
     }
   }
   @media screen and (max-width: $tablet) {
-    position: absolute;
+    scrollbar-color: $accent-mod-text-color;
+    // scrollbar-width: 1px;
+    border: 1px solid $accent-mod-text-color;
+    border-radius: 4px;
     width: 93px;
     height: 84px;
     overflow-y: auto;
-    border: 1px solid black;
 
+    position: absolute;
     visibility: hidden;
     opacity: 0;
-    position: absolute;
     z-index: 2;
     &.active {
       display: block;
       visibility: visible;
       opacity: 1;
       transition-duration: 300ms;
-      //   top: 60px;
-      //   left: 320px;
+      top: 34px;
+      left: 0;
     }
   }
   @media screen and (min-width: $tablet) {
@@ -183,13 +167,50 @@ hero__input:focus {
     width: 520px;
   }
 }
+
+.hero__list:active {
+  @media screen and (max-width: $tablet) {
+    color: #fcfcfc;
+  }
+}
+
+.hero__svg {
+  z-index: 9;
+  fill: currentColor;
+
+  &:focus,
+  &:hover {
+    background: $accent-mod-text-color;
+    color: #fcfcfc;
+  }
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+}
+
 .hero__select {
   @media screen and (max-width: 767.99px) {
     display: flex;
     margin: auto;
-    position: relative;
     width: 93px;
     height: 34px;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      background-color: $accent-mod-text-color;
+      border-radius: 4px;
+      color: #fcfcfc;
+    }
   }
 }
 
@@ -201,11 +222,20 @@ hero__input:focus {
   line-height: 1.5;
   align-items: center;
   text-align: center;
-  color: #5f6775;
+  color: $primary-mod-text-color;
 
   &:hover,
   &:focus {
     cursor: pointer;
+  }
+  @media screen and (max-width: $tablet) {
+    // font-size: 14px;
+    // line-height: 1.5;
+    width: 66px;
+    height: 28px;
+    padding: 10px 4px;
+    display: flex;
+    justify-content: flex-start;
   }
   @media screen and (min-width: $tablet) {
     font-size: 14px;
@@ -223,12 +253,14 @@ hero__input:focus {
 }
 
 .letter__is-active {
-  -webkit-text-stroke: 1px #5f6775;
-  text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
-  color: #fd5103;
+  @media screen and (min-width: $tablet) {
+    -webkit-text-stroke: 1px $primary-mod-text-color;
+    text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
+    color: $accent-mod-text-color;
+  }
 }
 
-.favorites__img {
+.hero__img-favorites {
   // @media screen and (max-width: $tablet) {
   margin: 60px auto;
   width: 280px;
@@ -246,3 +278,28 @@ hero__input:focus {
     height: 439px;
   }
 }
+
+
+.active {
+  @media screen and (max-width: 767.99px) {
+  margin-bottom: 80px;
+  }
+}
+
+.hero__select {
+  @media screen and (max-width: 767.99px) {
+    display: flex;
+    margin: auto;
+    width: 93px;
+    height: 34px;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      background-color: $accent-mod-text-color;
+      border-radius: 4px;
+      color: #fcfcfc;
+    }
+  }
+}
+
