@@ -1,6 +1,6 @@
 import { FAV_COCKTAIL } from './fav_cocktails';
 import sprite from '../../../images/svg/sprite.svg';
-import * as modal from '../modal/';
+// import * as modal from '../modal/';
 
 const refCocktList = document.querySelector('.js-add_f-coctail');
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
