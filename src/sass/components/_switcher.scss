@@ -60,14 +60,35 @@
   .modal__close {
     fill: white;
   }
-}
 
-[data-theme='dark-text'] {
-  color: white;
-}
+  .modal--ingredient {
+    color: white;
+    background-color: black;
+  }
 
-[data-theme='dark-back'] {
-  background-color: black;
+  .bar__list {
+    color: white;
+    background-color: black;
+  }
+
+  .switcher__light {
+    color: $primary-mod-text-color;
+  }
+  .switcher__dark {
+    color: $accent-mod-text-color;
+  }
+  .f-coctails__title {
+    color: $primary-white-color;
+  }
+  .f-coctails__item {
+    color: $primary-white-color;
+  }
+  .f_ingredients__title {
+    color: $primary-white-color;
+  }
+  .f-ingredients__item {
+    color: $primary-white-color;
+  }
 }
 
 $switch-width: 64px;
@@ -102,11 +123,11 @@ $switch-animation-duration: 1s;
   width: 0;
   pointer-events: none;
 
-  &:checked+.switch__label {
+  &:checked + .switch__label {
     background-color: $accent-mod-text-color;
   }
 
-  &:checked+.switch__label+.switch__marker {
+  &:checked + .switch__label + .switch__marker {
     left: 20px;
     background-color: $primary-white-color;
   }
