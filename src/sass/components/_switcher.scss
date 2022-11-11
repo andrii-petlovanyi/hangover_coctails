@@ -68,6 +68,23 @@
 
   .bar__list {
     color: white;
+  }
+  .cocktails__link {
+    background-color: black;
+  }
+  .ingredients__link {
+    background-color: black;
+  }
+
+  .ingredients__name {
+    color: white;
+  }
+
+  .ingredients__type {
+    color: $primary-mod-text-color;
+  }
+
+  .button-remove {
     background-color: black;
   }
 
