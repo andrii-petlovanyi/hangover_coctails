@@ -78,13 +78,13 @@ export function renderCardsWithPagination(
 function renderPaginationButtons(current, length) {
   let markup = '';
 
-  const fistPage = '<button>1</button>';
-  const beforePage = `<button>${current - 1}</button>`;
-  const afterPage = `<button>${current + 1}</button>`;
-  const lastPage = `<button>${length}</button>`;
+  const fistPage = '<button class="pag__btn">1</button>';
+  const beforePage = `<button class="pag__btn">${current - 1}</button>`;
+  const afterPage = `<button class="pag__btn">${current + 1}</button>`;
+  const lastPage = `<button class="pag__btn">${length}</button>`;
   const delimiter = '<span>...</span>';
 
-  markup += `<button data-action="back" ${
+  markup += `<button class="pag__btn" data-action="back" ${
     current === 1 ? 'disabled' : ''
   }><</button>`;
 
@@ -93,14 +93,14 @@ function renderPaginationButtons(current, length) {
 
   if (current > 1) markup += beforePage;
 
-  markup += `<button class="active">${current}</button>`;
+  markup += `<button class="pag__btn pag__btn--active">${current}</button>`;
 
   if (current < length) markup += afterPage;
 
   if (current < length - 2) markup += delimiter;
   if (current < length - 1) markup += lastPage;
 
-  markup += `<button data-action="forward" ${
+  markup += `<button class="pag__btn" data-action="forward" ${
     current === length ? 'disabled' : ''
   }>\></button>`;
 
