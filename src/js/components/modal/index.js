@@ -14,6 +14,7 @@ export async function searchCoctById(id, addFav) {
     const { data } = await getCoctById(id);
     collectIngr(data.drinks);
     renderMarkup(...data.drinks, ingrList);
+    setTimeout(modalDelay, 30);
     return data;
   } catch (error) {
     console.log(error);
@@ -41,7 +42,7 @@ export function renderMarkup(data, ingredients) {
   const isFav = actArr.find(item => item.strDrink === strDrink);
   const btn = isFav ? 'Remove from favorite' : 'Add to favorite';
   const markup = `
-<div class="backdrop">
+<div class="backdrop is__hidden">
   <div class="modal">
     <button type="button" aria-label="Close button" class="modal__close" >
       <svg class="modal__icon" width="24" height="24">
@@ -81,14 +82,23 @@ export function renderMarkup(data, ingredients) {
     .addEventListener('click', onClickIngr);
 }
 
-export function closeModal(e) {
+export function closeModal() {
+  modalDelay();
   document
     .querySelector('.modal__close')
     .removeEventListener('click', closeModal);
   document.querySelector('.modal').removeEventListener('click', cardBtnListenr);
-  document.querySelector('.backdrop').remove();
+  setTimeout(removeModalMark, 400);
   ingrList = [];
   ingrNameList = [];
+}
+
+function modalDelay() {
+  document.querySelector('.backdrop').classList.toggle('is__hidden');
+}
+
+function removeModalMark() {
+  document.querySelector('.backdrop').remove();
 }
 
 export async function modalBtnListener(e) {

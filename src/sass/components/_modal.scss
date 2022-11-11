@@ -9,17 +9,17 @@
   z-index: 3;
   opacity: 1;
   overflow-y: scroll;
-  transition: opacity 250ms $cubic;
+  transition: opacity 250ms $cubic, translate 250ms $cubic;
 }
 
-.backdrop.is__hidden {
+.is__hidden {
   opacity: 0;
   pointer-events: none;
 }
 
 .modal {
   .backdrop.is__hidden & {
-    transform: translate(-50%, -50%) scale(2) rotate(2turn);
+    transform: translate(-50%, 100%);
     opacity: 0;
   }
 }

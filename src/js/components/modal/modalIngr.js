@@ -13,6 +13,7 @@ export async function onClickIngr(e) {
 export async function searchIngrByName(name) {
   const { data } = await getIngrByName(name);
   renderMarkup(data.ingredients[0]);
+  setTimeout(modalDelay, 30);
 }
 
 function renderMarkup(data) {
@@ -20,8 +21,8 @@ function renderMarkup(data) {
   const { strIngredient, strDescription, strAlcohol, strABV, strType } = data;
   const isFav = actArr.find(item => item.strIngredient === strIngredient);
   const btn = isFav ? 'Remove from favorite' : 'Add to favorite';
-  const markup = `<div class="backdrop--ingredient" >
-  <div class="modal--ingredient">
+  const markup = `<div class="backdrop--ingredient is__hidden" >
+  <div class="modal--ingredient ">
     <button type="button" aria-label="Close button" class="modal__close js_modal-ingr">
       <svg class="modal__icon" width="24" height="24">
         <use href="${sprite}#icon-close-burger"></use>
@@ -62,12 +63,23 @@ function renderMarkup(data) {
 }
 
 function closeModalIngr() {
+  modalDelay();
   document
     .querySelector('.js_modal-ingr')
     .removeEventListener('click', closeModalIngr);
   document
     .querySelector('.js-mod-ingr-add')
     .removeEventListener('click', addToFavIngr);
+  setTimeout(removeModalMark, 400);
+}
+
+function modalDelay() {
+  document
+    .querySelector('.backdrop--ingredient')
+    .classList.toggle('is__hidden');
+}
+
+function removeModalMark() {
   document.querySelector('.backdrop--ingredient').remove();
 }
 

@@ -9,7 +9,7 @@
   z-index: 3;
   opacity: 1;
   overflow-y: scroll;
-  transition: opacity 250ms $cubic;
+  transition: opacity 250ms $cubic, translate 250ms $cubic;
 }
 
 .backdrop--ingredient.is__hidden {
@@ -19,7 +19,7 @@
 
 .modal--ingredient {
   .backdrop--ingredient.is__hidden & {
-    transform: translate(-50%, -50%) scale(2) rotate(2turn);
+    transform: translate(-50%, -50%) scale(0.1);
     opacity: 0;
   }
 }
