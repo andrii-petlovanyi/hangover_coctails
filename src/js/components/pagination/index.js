@@ -82,7 +82,7 @@ function renderPaginationButtons(current, length) {
   const beforePage = `<button class="pag__btn">${current - 1}</button>`;
   const afterPage = `<button class="pag__btn">${current + 1}</button>`;
   const lastPage = `<button class="pag__btn">${length}</button>`;
-  const delimiter = '<span>...</span>';
+  const delimiter = '<span class="pag__btn-span">...</span>';
 
   markup += `<button class="pag__btn" data-action="back" ${
     current === 1 ? 'disabled' : ''
