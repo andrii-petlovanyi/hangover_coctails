@@ -3,24 +3,22 @@
 .switcher {
   display: none;
   &.open {
-  z-index: 3;
-  display: flex;
-  position: absolute;
-  left: 20px;
-  top: 23px;
-  @media screen and (min-width:$mobile) {
-  left: 20px;
+    z-index: 3;
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 23px;
+    @media screen and (min-width: $mobile) {
+      left: 20px;
+    }
+    @media screen and (min-width: $tablet) {
+      left: 25%;
+    }
   }
-  @media screen and (min-width:$tablet) {
-  left: 25%;
-  }
-  }
-  @media screen and (min-width:$desktop){
-  display: flex;
+  @media screen and (min-width: $desktop) {
+    display: flex;
   }
 }
-
-
 
 .switcher__light {
   color: $accent-mod-text-color;
@@ -42,7 +40,20 @@
   background-color: black;
   color: white;
 
+  .switcher__light {
+    color: $primary-mod-text-color;
+  }
+
+  .switcher__dark {
+    color: $accent-mod-text-color;
+  }
+
   .cocktails__link {
+    color: white;
+    background-color: black;
+  }
+
+  .ingredients__link {
     color: white;
   }
 
@@ -74,14 +85,21 @@
   .modal__close {
     fill: white;
   }
-}
 
-[data-theme='dark-text'] {
-  color: white;
-}
+  .button-remove {
+    background-color: black;
+  }
+  .ingredients__name {
+    color: white;
+  }
 
-[data-theme='dark-back'] {
-  background-color: black;
+  .ingredients__type {
+    color: $primary-mod-text-color;
+  }
+
+  .modal--ingredient {
+    background-color: black;
+  }
 }
 
 $switch-width: 64px;
@@ -116,11 +134,11 @@ $switch-animation-duration: 1s;
   width: 0;
   pointer-events: none;
 
-  &:checked+.switch__label {
+  &:checked + .switch__label {
     background-color: $accent-mod-text-color;
   }
 
-  &:checked+.switch__label+.switch__marker {
+  &:checked + .switch__label + .switch__marker {
     left: 20px;
     background-color: $primary-white-color;
   }
