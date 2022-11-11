@@ -58,7 +58,6 @@ export function renderMarkup(data = []) {
 }
 
 export async function cardBtnListenr(e) {
-  console.log();
   if (e.target.dataset.type)
     return await searchCoctById(
       e.target.dataset.id,

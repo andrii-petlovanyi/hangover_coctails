@@ -70,7 +70,6 @@ export function renderCardsWithPagination(
     const pages = transformDataToPages(perPage, cards);
     //   renderCards(container, pages[currentPage]);
     renderCards(pages[currentPage]);
-    console.log(pages[currentPage]);
     renderPaginationButtons(currentPage, Object.keys(pages).length);
   }
 }
