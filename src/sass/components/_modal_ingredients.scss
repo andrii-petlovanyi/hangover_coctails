@@ -148,29 +148,23 @@
   border-radius: 5px;
 }
 
-.modal__button--favorite {
-  width: 185px;
-  height: 48px;
-}
-
-.modal__button--remove {
-  width: 248px;
-  height: 48px;
-}
-
 .modal__button--favorite--ingredients {
-  width: 185px;
   height: 48px;
+  width: 210px;
 
+  padding: 5px;
   margin-top: 30px;
 
   @media screen and (min-width: $tablet) {
+    order: +2;
+
     margin-top: 45px;
-    margin-left: 465px;
+    margin-left: 440px;
   }
+
   @media screen and (min-width: $desktop) {
-    margin-top: 45px;
-    margin-left: 565px;
+    margin-top: 40px;
+    margin-left: 540px;
   }
 }
 
