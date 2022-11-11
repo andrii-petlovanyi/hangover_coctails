@@ -20,6 +20,11 @@
   display: block;
   width: 40px;
   height: 40px;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .pag__btn--active {
