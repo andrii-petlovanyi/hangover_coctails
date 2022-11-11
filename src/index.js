@@ -41,11 +41,15 @@ refHeaderFavLink.addEventListener('mouseenter', () => {
 refHeaderMenuOpen.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
   refHeaderSwitcher.classList.toggle('open');
+  document.querySelector('.header__input').classList.toggle('open');
+  document.querySelector('.nav__desktop').classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 
 refHeaderMenuClose.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  document.querySelector('.header__input').classList.toggle('open');
+  document.querySelector('.nav__desktop').classList.toggle('open');
   refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });

@@ -4,6 +4,7 @@ import { notFound } from '../error';
 import { themeSwitcher } from '../switcher/switcher';
 import { searchCoctById } from '../modal';
 import { errorListFavCocktail } from '../../templates';
+import { initPagination } from '../pagination';
 import {
   refFormSearch,
   refCocktList,
@@ -47,7 +48,9 @@ refHeaderMenuClose.addEventListener('click', () => {
 themeSwitcher();
 
 if (actArr.length) {
-  renderMarkupList(actArr);
+  // renderMarkupList(actArr);
+  console.log(actArr);
+  initPagination(actArr, renderMarkupList);
 } else {
   renderErrorMarkup();
 }
@@ -57,12 +60,14 @@ async function deleteCard(e) {
   if (e.target.dataset.favid) {
     deleteFavFromLS(e.target.dataset.favid);
     e.target.parentNode.parentNode.remove();
+    reRenderCards();
     return;
   }
-  if (e.target.dataset.type) await searchCoctById(e.target.dataset.id);
+  if (e.target.dataset.type)
+    await searchCoctById(e.target.dataset.id, e.target.nextElementSibling);
 }
 
-function renderMarkupList(data = []) {
+export function renderMarkupList(data = []) {
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
       return `<li class="coctail-card">
@@ -97,6 +102,11 @@ function deleteFavFromLS(id) {
       return;
     }
   }
+}
+
+export function reRenderCards() {
+  newArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  initPagination(newArr, renderMarkupList);
 }
 
 function searchCockt(e) {
