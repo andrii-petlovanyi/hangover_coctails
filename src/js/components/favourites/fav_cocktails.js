@@ -1,9 +1,10 @@
 import { getCoctById } from './../../api';
+import sprite from '../../../images/svg/sprite.svg';
+import { refCocktList } from '../refs';
 import { favCardBtnRemove, favCardBtnAdd } from '../../templates';
 
 export const FAV_COCKTAIL = 'favourites_coctails';
 
-// Local Storage
 export async function btnAddFav(id, type, refFav) {
   try {
     const { data } = await getCoctById(id);
@@ -36,6 +37,7 @@ export async function btnAddFav(id, type, refFav) {
       removeBtnCard(idDrink);
     } else {
       removeBtnModal(refBtnFavModal);
+      checkAddAgainCardFav(drinkArr);
       refFav.innerHTML = favCardBtnRemove;
     }
   } catch (error) {
@@ -59,11 +61,31 @@ export function addBtnModal(refBtnFavModal) {
 }
 
 function checkRemoveCardFav(id) {
-  const refFav = document.querySelector('.f-coctails');
-  const isFavPage = refFav ? true : false;
+  const isFavPage = document.querySelector('.f-coctails') ? true : false;
   if (isFavPage) {
     document
       .querySelector(`button[data-favid="${id}"]`)
       .parentElement.parentElement.remove();
+  }
+}
+
+function checkAddAgainCardFav(data) {
+  const isFavPage = document.querySelector('.f-coctails') ? true : false;
+  if (isFavPage) {
+    const { strDrink, strDrinkThumb, idDrink } = data;
+    const mark = `<li class="coctail-card">
+      <img class="img" src=${strDrinkThumb} alt=${strDrink}/img>
+      <h3 class="coctail-card__name">${strDrink}</h3>
+      <div class="coctail-card__options">
+        <button class="button-learn_more" data-id=${idDrink} data-type="learn">Learn more</button>
+        <button class="button-add_to" data-favid=${idDrink} data-add="add">
+          Remove
+          <svg class="heart-icon" width="18" height="18">
+            <use href="${sprite}#icon-heart_full"></use>
+          </svg>
+        </button>
+      </div>
+    </li>`;
+    refCocktList.insertAdjacentHTML('beforeend', mark);
   }
 }

@@ -70,9 +70,10 @@ export async function onSubmitForm(e) {
   const { data } = await getCoctByName(searchQuery);
   if (!data.drinks) {
     container.innerHTML = '';
+    document.querySelector('.main-title').textContent = '';
     refCocktailList.innerHTML = notFound;
     return;
   }
-  // renderMarkup(data.drinks);
+  document.querySelector('.main-title').textContent = 'Searching results';
   initPagination(data.drinks, renderMarkup);
 }

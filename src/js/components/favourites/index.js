@@ -48,8 +48,6 @@ refHeaderMenuClose.addEventListener('click', () => {
 themeSwitcher();
 
 if (actArr.length) {
-  // renderMarkupList(actArr);
-  console.log(actArr);
   initPagination(actArr, renderMarkupList);
 } else {
   renderErrorMarkup();

@@ -71,7 +71,7 @@ function reRenderIngrCard() {
   initPagination(newArr, renderMarkup);
 }
 
-function renderMarkup(data = []) {
+export function renderMarkup(data = []) {
   const mark = data
     .map(({ strIngredient, strType }) => {
       return `<li class="ingredients-card">
