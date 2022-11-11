@@ -40,7 +40,7 @@ function renderMarkup(data) {
     <ul class="ingredient__list">
       <li class="ingredient__items">✶ Alcohol: ${strAlcohol}</li>
       <li class="ingredient__items">✶ Alcohol by volume: ${
-        strABV ? strABV : 'no information'
+        strABV ? strABV + ' %' : 'no information'
       }</li>
     </ul>
     <button

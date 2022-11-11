@@ -40,8 +40,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 760px;
-    height: 525px;
+    width: 720px;
+    height: 570px;
 
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.06);
@@ -52,6 +52,8 @@
     transform: translate(-50%, 0);
   }
   @media screen and (min-width: $desktop) {
+    width: 820px;
+
     transform: translate(-50%, -50%) scale(1);
     transition: transform 500ms $cubic, opacity 500ms $cubic;
   }
@@ -110,7 +112,17 @@
   font-size: 16px;
   line-height: 1.75;
 
-  overflow-y: scroll;
+  @media screen and (min-width: $tablet) {
+    height: 180px;
+
+    overflow-y: scroll;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 180px;
+
+    overflow-y: scroll;
+  }
 }
 
 .ingredient__list {
@@ -154,7 +166,11 @@
 
   @media screen and (min-width: $tablet) {
     margin-top: 45px;
-    margin-left: 500px;
+    margin-left: 465px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 45px;
+    margin-left: 565px;
   }
 }
 

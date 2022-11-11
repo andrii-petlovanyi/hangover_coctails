@@ -3,13 +3,46 @@ import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
 import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
+import {
+  refIngrList,
+  refFormSearch,
+  refHeaderJSMenu,
+  refHeaderFavLink,
+  refHeaderFavBar,
+  refHeaderMenuOpen,
+  refHeaderMenuClose,
+  refHeaderMobMenu,
+  refHeaderSwitcher,
+} from '../../refs';
+import { errorListFavCocktail } from '../../../templates';
 
-const refIngrList = document.querySelector('.ingredients-list');
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
-const refForm = document.querySelector('.header__input');
-refForm.addEventListener('submit', searchCockt);
-
+refFormSearch.addEventListener('submit', searchCockt);
 refIngrList.addEventListener('click', chooseBtnIngr);
+
+//header
+
+refHeaderJSMenu.addEventListener('mouseleave', () => {
+  refHeaderFavBar.classList.remove('active');
+});
+
+refHeaderFavLink.addEventListener('mouseenter', () => {
+  refHeaderFavBar.classList.add('active');
+});
+
+refHeaderMenuOpen.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+refHeaderMenuClose.addEventListener('click', () => {
+  refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
+  document.body.classList.toggle('overflow');
+});
+
+// header
 
 themeSwitcher();
 
@@ -52,10 +85,7 @@ function renderMarkup(data = []) {
 }
 
 function renderErrorMarkup() {
-  const mark = `<li class="f-coctails__item">
-              You haven't added any favorite cocktails yet
-            </li>`;
-  refIngrList.innerHTML = mark;
+  refIngrList.innerHTML = errorListFavCocktail;
 }
 
 function deleteFavIngrFromLS(id) {

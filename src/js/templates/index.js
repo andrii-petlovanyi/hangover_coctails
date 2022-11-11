@@ -7,6 +7,8 @@ import tablet2x from '../../images/noCoctails/errorTablet2x.png';
 import desctop1x from '../../images/noCoctails/errorDesctop1x.png';
 import desctop2x from '../../images/noCoctails/errorDesctop2x.png';
 
+import sprite from '../../images/svg/sprite.svg';
+
 export const notFound = `<div class="container search-coctail__error">
 <p class="search-coctail__title">Sorry, we didn't find any cocktail for you</p>
 
@@ -40,3 +42,18 @@ export const notFound = `<div class="container search-coctail__error">
   </picture>
 </div>`;
 
+export const errorListFavCocktail = `<li class="f-coctails__item">
+              You haven't added any favorite cocktails yet
+            </li>`;
+
+export const favCardBtnRemove = `Remove
+          <svg class="heart-icon" width="18" height="18">
+            <use href="${sprite}#icon-heart_full"></use>
+          </svg>`;
+
+export const favCardBtnAdd = `Add to
+          <svg class="heart-icon" width="18" height="18">
+            <use href="${sprite}#icon-Heart"></use>
+          </svg>`;
+
+// export const

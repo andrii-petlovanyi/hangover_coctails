@@ -6,9 +6,11 @@ import sprite from '../../../images/svg/sprite.svg';
 
 export let ingrList = [];
 export let ingrNameList = [];
+let refFav = '';
 
-export async function searchCoctById(id) {
+export async function searchCoctById(id, addFav) {
   try {
+    refFav = addFav;
     const { data } = await getCoctById(id);
     collectIngr(data.drinks);
     renderMarkup(...data.drinks, ingrList);
@@ -91,5 +93,5 @@ export function closeModal(e) {
 
 export async function modalBtnListener(e) {
   if (e.target.dataset.add)
-    return await btnAddFav(e.target.dataset.favid, 'modal');
+    return await btnAddFav(e.target.dataset.favid, 'modal', refFav);
 }
