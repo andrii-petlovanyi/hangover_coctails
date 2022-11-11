@@ -12,6 +12,7 @@ import {
   refHeaderMenuOpen,
   refHeaderMenuClose,
   refHeaderMobMenu,
+  refHeaderSwitcher,
 } from '../../refs';
 import { errorListFavCocktail } from '../../../templates';
 
@@ -31,11 +32,13 @@ refHeaderFavLink.addEventListener('mouseenter', () => {
 
 refHeaderMenuOpen.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 
 refHeaderMenuClose.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 

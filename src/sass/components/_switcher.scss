@@ -3,6 +3,19 @@
 .switcher {
   display: none;
 
+  &.open {
+    z-index: 3;
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 33px;
+    @media screen and (min-width: $mobile) {
+      left: 20px;
+    }
+    @media screen and (min-width: $tablet) {
+      left: 25%;
+    }
+  }
   @media screen and (min-width: $desktop) {
     display: flex;
   }

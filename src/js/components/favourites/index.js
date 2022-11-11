@@ -13,6 +13,7 @@ import {
   refHeaderMenuOpen,
   refHeaderMenuClose,
   refHeaderMobMenu,
+  refHeaderSwitcher,
 } from '../refs';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
@@ -31,11 +32,13 @@ refHeaderFavLink.addEventListener('mouseenter', () => {
 
 refHeaderMenuOpen.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 
 refHeaderMenuClose.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 

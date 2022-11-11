@@ -15,6 +15,7 @@ import {
   refHeaderMenuOpen,
   refHeaderMenuClose,
   refHeaderMobMenu,
+  refHeaderSwitcher,
 } from './js/components/refs';
 import { themeSwitcher } from './js/components/switcher/switcher';
 //
@@ -39,10 +40,12 @@ refHeaderFavLink.addEventListener('mouseenter', () => {
 
 refHeaderMenuOpen.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
 
 refHeaderMenuClose.addEventListener('click', () => {
   refHeaderMobMenu.classList.toggle('open');
+  refHeaderSwitcher.classList.toggle('open');
   document.body.classList.toggle('overflow');
 });
