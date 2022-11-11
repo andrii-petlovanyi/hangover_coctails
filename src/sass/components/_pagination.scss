@@ -1,22 +1,31 @@
 .js-pagination {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   margin: 0 auto 20px auto;
   justify-content: center;
   font-weight: bold;
+  @media screen and (min-width: $tablet) {
+    gap: 15px;
+  }
 }
 
 .pag__btn,
 .pag__btn-span {
+  font-size: 55%;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 22px;
+  height: 22px;
   border: 1px solid $accent-text-color;
   text-decoration: none;
   border-radius: 5px;
   background: #fff;
   color: #242b36;
   user-select: none;
+  @media screen and (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+    font-size: 100%;
+  }
 }
 .pag__btn:hover,
 .pag__btn:focus {
