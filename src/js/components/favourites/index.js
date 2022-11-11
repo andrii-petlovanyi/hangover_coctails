@@ -115,7 +115,6 @@ function searchCockt(e) {
   e.preventDefault();
   const searchQ = e.currentTarget.finder.value.trim();
   if (!searchQ) return;
-  console.log(actArr);
   const result = actArr.filter(el =>
     el.strDrink.toLowerCase().includes(searchQ.toLowerCase())
   );
