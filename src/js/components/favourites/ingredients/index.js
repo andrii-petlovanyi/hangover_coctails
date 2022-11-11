@@ -3,6 +3,8 @@ import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
 import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
+import { initPagination } from '../../pagination';
+
 import {
   refIngrList,
   refFormSearch,
@@ -54,13 +56,19 @@ function chooseBtnIngr(e) {
   if (e.target.dataset.fav) {
     deleteFavIngrFromLS(e.target.dataset.fav);
     e.target.parentNode.parentNode.remove();
+    reRenderIngrCard();
   }
 }
 
 if (actArr.length) {
-  renderMarkup(actArr);
+  initPagination(actArr, renderMarkup);
 } else {
   renderErrorMarkup();
+}
+
+function reRenderIngrCard() {
+  const newArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+  initPagination(newArr, renderMarkup);
 }
 
 function renderMarkup(data = []) {

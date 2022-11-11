@@ -23,6 +23,7 @@ export async function btnAddFav(id, type, refFav) {
           addBtnCard(idDrink);
         } else {
           addBtnModal(refBtnFavModal);
+          checkRemoveCardFav(idDrink);
           refFav.innerHTML = favCardBtnAdd;
         }
         return;
@@ -55,4 +56,14 @@ export function removeBtnModal(refBtnFavModal) {
 }
 export function addBtnModal(refBtnFavModal) {
   refBtnFavModal.textContent = 'Add to favorite';
+}
+
+function checkRemoveCardFav(id) {
+  const refFav = document.querySelector('.f-coctails');
+  const isFavPage = refFav ? true : false;
+  if (isFavPage) {
+    document
+      .querySelector(`button[data-favid="${id}"]`)
+      .parentElement.parentElement.remove();
+  }
 }
