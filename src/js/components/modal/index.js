@@ -94,6 +94,7 @@ export function closeModal() {
 }
 
 function modalDelay() {
+  document.body.classList.toggle('scroll_off');
   document.querySelector('.backdrop').classList.toggle('is__hidden');
 }
 

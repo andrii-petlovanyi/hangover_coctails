@@ -252,3 +252,9 @@
   background: $accent-mod-text-color;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
+.scroll_off {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
