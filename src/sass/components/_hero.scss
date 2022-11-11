@@ -279,10 +279,9 @@
   }
 }
 
-
 .active {
   @media screen and (max-width: 767.99px) {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
   }
 }
 
@@ -303,3 +302,6 @@
   }
 }
 
+.hero__item--mod {
+  pointer-events: none;
+}
