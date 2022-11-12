@@ -1,3 +1,4 @@
+import { headerInit } from '../../header';
 import { FAV_INGREDIENTS } from './fav_ingredients';
 import sprite from '../../../../images/svg/sprite.svg';
 import { notFound } from '../../error';
@@ -5,51 +6,14 @@ import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
 import { initPagination } from '../../pagination';
 
-import {
-  refIngrList,
-  refFormSearch,
-  refHeaderJSMenu,
-  refHeaderFavLink,
-  refHeaderFavBar,
-  refHeaderMenuOpen,
-  refHeaderMenuClose,
-  refHeaderMobMenu,
-  refHeaderSwitcher,
-} from '../../refs';
+import { refIngrList, refFormSearch, refFormSearch } from '../../refs';
 import { errorListFavCocktail } from '../../../templates';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
 refFormSearch.addEventListener('submit', searchCockt);
 refIngrList.addEventListener('click', chooseBtnIngr);
 
-//header
-
-refHeaderJSMenu.addEventListener('mouseleave', () => {
-  refHeaderFavBar.classList.remove('active');
-});
-
-refHeaderFavLink.addEventListener('mouseenter', () => {
-  refHeaderFavBar.classList.add('active');
-});
-
-refHeaderMenuOpen.addEventListener('click', () => {
-  refHeaderMobMenu.classList.toggle('open');
-  refHeaderSwitcher.classList.toggle('open');
-  document.querySelector('.input').classList.toggle('open');
-  document.querySelector('.header__nav').classList.toggle('open');
-  document.body.classList.toggle('overflow');
-});
-
-refHeaderMenuClose.addEventListener('click', () => {
-  refHeaderMobMenu.classList.toggle('open');
-  document.querySelector('.input').classList.toggle('open');
-  document.querySelector('.header__nav').classList.toggle('open');
-  refHeaderSwitcher.classList.toggle('open');
-  document.body.classList.toggle('overflow');
-});
-
-// header
-
+headerInit();
 themeSwitcher();
 
 function chooseBtnIngr(e) {
@@ -120,6 +84,7 @@ function searchCockt(e) {
     el.strIngredient.toLowerCase().includes(searchQ.toLowerCase())
   );
 
+  refFormSearch.reset();
   if (!result.length) return (refIngrList.innerHTML = notFound);
   renderMarkup(result);
 }

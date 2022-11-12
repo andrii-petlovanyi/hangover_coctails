@@ -1,13 +1,11 @@
 import { renderMarkup } from '../main';
 import { getCoctByName } from '../../api';
+import { refFormSearch, refCocktailList, refInputFormSearch } from '../refs';
+import { closeMobileMenu } from '.';
 import { notFound } from '../error';
 import { initPagination, container } from '../pagination';
-import { refFormSearch } from '../refs';
+import { removeActiveLetterClass } from '../hero/search-Letters';
 import Notiflix from 'notiflix';
-
-export const formSubmitRef = document.querySelector('.input');
-export const submitBtnRef = document.querySelector('.input__btn');
-export const refCocktailList = document.querySelector('.js-main-coct');
 
 Notiflix.Notify.init({
   width: '280px',
@@ -62,11 +60,13 @@ let searchQuery = '';
 
 export async function onSubmitForm(e) {
   e.preventDefault();
+  removeActiveLetterClass();
   searchQuery = e.currentTarget.finder.value.trim();
   if (!searchQuery) {
     Notiflix.Notify.warning('Sorry, please enter the name of the cocktail.');
     return;
   }
+  checkCloseModalAfterSearch();
   const { data } = await getCoctByName(searchQuery);
   if (!data.drinks) {
     container.innerHTML = '';
@@ -76,4 +76,13 @@ export async function onSubmitForm(e) {
   }
   document.querySelector('.main-title').textContent = 'Searching results';
   initPagination(data.drinks, renderMarkup);
+  refFormSearch.reset();
+}
+
+function checkCloseModalAfterSearch() {
+  const width = document.body.clientWidth;
+  if (width > 767) return;
+  closeMobileMenu();
+  refFormSearch.reset();
+  refInputFormSearch.blur();
 }

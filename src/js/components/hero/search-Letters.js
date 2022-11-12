@@ -2,9 +2,10 @@ import { getCoctByFirstLet } from '../../api';
 import { notFound } from '../error';
 import sprite from '../../../images/svg/sprite.svg';
 import { initPagination } from '../pagination';
+import { refLetterSeList } from '../refs';
 
 const FAV_COCKTAIL = 'favourites_coctails';
-export const lettersListRef = document.querySelector(`.hero__list`);
+export const lettersListRef = refLetterSeList;
 
 export function chooseLetter(evt) {
   const isLetter = evt.target.classList.contains(`hero__item`);
@@ -33,7 +34,7 @@ async function addMarkup(letter) {
   } catch (error) {}
 }
 
-function removeActiveLetterClass() {
+export function removeActiveLetterClass() {
   const currentActiveLetter = document.querySelector(`.letter__is-active`);
 
   if (currentActiveLetter) {

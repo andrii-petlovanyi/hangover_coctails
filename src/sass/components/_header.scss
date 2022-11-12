@@ -254,6 +254,7 @@
     margin-left: auto;
     margin-top: 10px;
     transition: none;
+    pointer-events: all;
     &.open {
       display: none;
     }
