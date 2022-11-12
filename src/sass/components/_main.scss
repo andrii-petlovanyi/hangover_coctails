@@ -1,20 +1,26 @@
-.coctails-list,
-.ingredients-list {
+.main {
   margin-top: 60px;
   margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
   @media screen and (min-width: $tablet) {
     margin-top: 56px;
     margin-bottom: 60px;
-    gap: 32px;
   }
   @media screen and (min-width: $desktop) {
     margin-top: 60px;
   }
 }
+
+.coctails-list,
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media screen and (min-width: $tablet) {
+    gap: 32px;
+  }
+}
+
 .main-title {
   margin-top: 40px;
   display: flex;
@@ -35,6 +41,7 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 1.5;
+    margin-bottom: 60px;
   }
 }
 .coctail-card {

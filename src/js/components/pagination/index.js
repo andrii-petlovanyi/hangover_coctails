@@ -81,11 +81,11 @@ function renderPaginationButtons(current, length) {
   const beforePage = `<button class="pag__btn">${current - 1}</button>`;
   const afterPage = `<button class="pag__btn">${current + 1}</button>`;
   const lastPage = `<button class="pag__btn">${length}</button>`;
-  const delimiter = '<span>...</span>';
+  const delimiter = '<span class="pag__delimiter">...</span>';
 
-  markup += `<button class="pag__btn" data-action="back" ${
+  markup += `<button class="pag__btn pag__back" data-action="back" ${
     current === 1 ? 'disabled' : ''
-  }><</button>`;
+  }></button>`;
 
   if (current > 2) markup += fistPage;
   if (current > 3) markup += delimiter;
@@ -99,9 +99,9 @@ function renderPaginationButtons(current, length) {
   if (current < length - 2) markup += delimiter;
   if (current < length - 1) markup += lastPage;
 
-  markup += `<button class="pag__btn" data-action="forward" ${
+  markup += `<button class="pag__btn pag__forward" data-action="forward" ${
     current === length ? 'disabled' : ''
-  }>\></button>`;
+  }></button>`;
 
   container.innerHTML = markup;
 }

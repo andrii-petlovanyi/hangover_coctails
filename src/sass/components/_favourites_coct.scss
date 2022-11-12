@@ -7,6 +7,8 @@
   text-align: center;
   color: #202025;
   max-width: 280px;
+  margin-bottom: 80px;
+
   @media screen and (min-width: $tablet) {
     font-family: 'Roboto';
     font-style: normal;
@@ -16,6 +18,7 @@
     text-align: center;
     color: #202025;
     max-width: 493px;
+    margin-bottom: 78px;
   }
   @media screen and (min-width: $desktop) {
     font-family: 'Poppins';
@@ -26,6 +29,7 @@
     text-align: center;
     color: #000000;
     max-width: 464px;
+    margin-bottom: 60px;
   }
 }
 
@@ -70,11 +74,12 @@
 
 .f-coctails {
   margin-top: 60px;
-
+  margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
-    margin-top: 68px;
+    margin-top: 56px;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: $desktop) {
-    margin-top: 69px;
+    margin-top: 60px;
   }
 }

@@ -1,0 +1,114 @@
+.js-pagination {
+  display: flex;
+  gap: 7px;
+  //   padding: 20px 0;
+  margin-top: 32px;
+  justify-content: center;
+
+  @media screen and (min-width: $tablet) {
+    gap: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.pag__btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.25;
+  border-radius: 5px;
+  border: 1px solid $accent-text-color;
+  color: $accent-text-color;
+  background-color: white;
+  transition: 250ms transform ease;
+
+  @media screen and (min-width: $tablet) {
+    width: 35px;
+    height: 35px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 40px;
+    height: 40px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  &:disabled {
+    cursor: auto;
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.pag__btn--active {
+  border: none;
+  font-family: 'Roboto';
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: white;
+  background-color: $accent-text-color;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 17px;
+  }
+}
+
+.pag__delimiter {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  color: $accent-text-color;
+}
+
+.pag__back,
+.pag__forward {
+  opacity: 0.8;
+  border: none;
+  font-weight: 700;
+  color: #5f6775;
+}
+
+.pag__forward {
+  background-size: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='13' viewBox='0 0 9 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z' fill='%23202025'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  @media screen and (min-width: $tablet) {
+    background-size: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+    background-size: 12px;
+  }
+}
+
+.pag__back {
+  background-size: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z' fill='%23202025'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  @media screen and (min-width: $tablet) {
+    background-size: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+    background-size: 12px;
+  }
+}
