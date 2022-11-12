@@ -16,53 +16,41 @@
     top: 180px;
     left: 20px;
   }
-
-  @media screen and (min-width: $desktop) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 43px;
-    gap: 60px;
-    margin-top: 15px;
-    font-size: 14px;
-    line-height: 1.3;
-    cursor: pointer;
-  }
 }
 
 .home__link,
 .favorite__link {
   font-family: poppins;
-  font-size: 18px;
-  line-height: 1.3;
-  padding: 15px 0;
+  font-size: 28px;
+  line-height: 1.1;
+  padding: 0;
   &:hover, &:focus {
     color: $accent-mod-text-color;
   }
 }
 
-.js__menu {
-  padding: 15px 0;
+.home__link {
+  margin-bottom: 32px;
+}
+
+.js-menu {
+  margin-top: 0px;
 }
 
 .favorite__bar {
   visibility: hidden;
   opacity: 0;
-  position: absolute;
+  position: relative;
   z-index: 2;
-
+  opacity: 0;
+  top: 40px;
+  left: 0px;
   &.active {
-    display: block;
     visibility: visible;
     opacity: 1;
     transition-duration: 1300ms;
-    top: 70px;
-    left: 65px;
-
-    @media screen and (min-width: $desktop) {
-      left: 350px;
-      top: 60px;
-    }
+    top: 15px;
+    left: 0px;
   }
 }
 
@@ -117,14 +105,6 @@
 
 .header__input {
   display: none;
-      &::after {
-        position: absolute;
-        content: '';
-        width: 1px;
-        height: 40px;
-        background-color: $accent-mod-text-color;
-        left: 70px;
-      }
   &.open {
   display: flex;
   z-index: 3;
@@ -132,10 +112,7 @@
   top: 90px;
   left: -12px;
   width: 100%;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-right: 170px;
-  }
+}
 }
 
 .input__btn {
@@ -144,7 +121,10 @@
   position: relative;
   left: 30px;
   background-color: transparent;
-  border: 0;
+  border-left: 0;
+  border-right: 1px solid $accent-mod-text-color;
+  border-top: 0;
+  border-bottom: 0;
   z-index: 2;
   cursor: pointer;
 }
@@ -168,17 +148,12 @@
   }
 }
 
-.nav__burger {
-  @media screen and (min-width: $desktop) {
-    display: none;
-  }
-}
-
 .menu__icon {
   cursor: pointer;
+  margin-top: 12px;
 }
 
-.mobile__menu {
+.menu__mobile {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -220,20 +195,8 @@
   margin-top: 12px;
 }
 
-
-.menu__switcher {
-  display: flex;
-}
-
 .overflow {
   overflow: hidden;
-}
-
-@media screen and (min-width: $mobile){
-  .favorite__bar {
-    top: 80px;
-    left: 60px;
-  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -242,15 +205,13 @@
       left: 50%;
     }
   }
+  
   .header__input {
     display: flex;
     align-items: center;
     margin-right: 40px;
     margin-left: auto;
-    &::after{
-      position: relative;
-      left: -210px;
-    }
+    margin-top: 10px;
       &.open {
         display: none;
   }
@@ -275,5 +236,41 @@
   .menu__close {
     margin-right: 0;
     margin-top: 0;
+  }
+}
+
+
+@media screen and (min-width:$desktop) {
+  .menu {
+    display: none;
+  }
+  .header__input {
+    margin-right: 170px;
+  }
+  .header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 43px;
+  gap: 60px;
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.3;
+  cursor: pointer;
+  }
+  .home__link, .favorite__link {
+    font-family: poppins;
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 15px 0;
+  }
+  .home__link {
+    margin-bottom: 0;
+  }
+  .js-menu {
+    margin-top: 97px;
+  }
+  .switcher {
+    margin-top: 18px;
   }
 }
