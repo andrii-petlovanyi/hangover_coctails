@@ -2,9 +2,14 @@
 
 .switcher {
   display: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 300ms all ease;
   &.open {
     z-index: 3;
     display: flex;
+    opacity: 1;
+    transform: translateX(0);
     position: absolute;
     left: 20px;
     top: 23px;
@@ -12,11 +17,13 @@
       left: 20px;
     }
     @media screen and (min-width: $tablet) {
-      left: 35%;
+      left: 42%;
     }
   }
   @media screen and (min-width: $desktop) {
     display: flex;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
