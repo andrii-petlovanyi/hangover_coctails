@@ -6,5 +6,5 @@ export const refHeaderFavBar = document.querySelector('.favorite__bar');
 export const refHeaderFavLink = document.querySelector('.favorite__link');
 export const refHeaderMenuOpen = document.querySelector('.menu__icon');
 export const refHeaderMenuClose = document.querySelector('.menu__close');
-export const refHeaderMobMenu = document.querySelector('.mobile__menu');
+export const refHeaderMobMenu = document.querySelector('.menu__mobile');
 export const refHeaderSwitcher = document.querySelector('.switcher');
