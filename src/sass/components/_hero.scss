@@ -303,5 +303,13 @@
 }
 
 .hero__item--mod {
-  pointer-events: none;
+  display: none;
+  opacity: 0;
+}
+
+@media screen and (min-width: $desktop) {
+  .hero__item--mod {
+    display: flex;
+    pointer-events: none;
+  }
 }

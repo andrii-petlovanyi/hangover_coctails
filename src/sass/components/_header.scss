@@ -25,9 +25,10 @@
 
 .header__home__link,
 .header__favorite__link {
-  font-family: poppins;
+  font-family: 'Poppins';
   font-size: 28px;
   line-height: 1.1;
+  letter-spacing: 0.02em;
   padding: 0;
   &:hover,
   &:focus {
@@ -43,29 +44,13 @@
   margin-top: 0px;
 }
 
-// .header__favorite__bar {
-//   visibility: hidden;
-//   opacity: 0;
-//   position: relative;
-//   z-index: 2;
-//   opacity: 0;
-//   top: 40px;
-//   left: 0px;
-//   &.active {
-//     visibility: visible;
-//     opacity: 1;
-//     transition-duration: 1300ms;
-//     top: 15px;
-//     left: 0px;
-//   }
-// }
-
 .header__cocktails__item {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $primary-white-color;
-  font-family: poppins;
+  font-family: 'Poppins';
+  letter-spacing: 0.02em;
   font-size: 18px;
   line-height: 1.3;
   border: 1px solid $accent-mod-text-color;
@@ -91,7 +76,8 @@
   align-items: center;
   justify-content: center;
   color: $primary-text-color;
-  font-family: poppins;
+  font-family: 'Poppins';
+  letter-spacing: 0.02em;
   font-size: 18px;
   line-height: 1.3;
   border: 1px solid $accent-mod-text-color;
@@ -344,9 +330,10 @@
   }
   .header__home__link,
   .header__favorite__link {
-    font-family: poppins;
+    font-family: 'Poppins';
     font-size: 18px;
     line-height: 1.3;
+    letter-spacing: 0.02em;
     padding: 15px 0;
   }
   .header__home__link {
