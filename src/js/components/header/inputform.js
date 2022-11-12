@@ -5,7 +5,7 @@ import { initPagination, container } from '../pagination';
 import { refFormSearch } from '../refs';
 import Notiflix from 'notiflix';
 
-export const formSubmitRef = document.querySelector('.input');
+export const formSubmitRef = document.querySelector('.header__input');
 export const submitBtnRef = document.querySelector('.input__btn');
 export const refCocktailList = document.querySelector('.js-main-coct');
 
