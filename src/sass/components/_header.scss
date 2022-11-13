@@ -35,9 +35,17 @@
   line-height: 1.1;
   letter-spacing: 0.02em;
   padding: 0;
+
   &:hover,
   &:focus {
     color: $accent-mod-text-color;
+    // fill: $primary-white-color;
+  }
+
+  &:hover .header__fav-arrow,
+  &:focus .header__fav-arrow {
+    // color: $accent-mod-text-color;
+    fill: $primary-white-color;
   }
 }
 

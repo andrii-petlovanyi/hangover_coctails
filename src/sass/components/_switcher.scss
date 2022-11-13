@@ -100,6 +100,9 @@
 
   .modal__close {
     fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .button-remove {
@@ -119,10 +122,16 @@
 
   .menu__icon {
     fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .close__icon {
     fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .menu__mobile.open {
@@ -139,6 +148,10 @@
 
   .f-coctails__title {
     color: $primary-white-color;
+  }
+
+  .header__fav-arrow {
+    fill: $accent-mod-text-color;
   }
 }
 
