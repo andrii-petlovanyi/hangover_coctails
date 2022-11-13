@@ -94,13 +94,15 @@
   }
 
   .modal {
-    color: white;
+    color: $primary-white-color;
     background-color: $primary-black-color;
   }
 
   .modal__close {
     fill: $primary-white-color;
-    &:hover {
+    &:hover,
+    &:focus {
+      cursor: pointer;
       fill: $accent-mod-text-color;
     }
   }
@@ -159,6 +161,12 @@
     &:focus .header__fav-arrow {
       fill: $primary-white-color;
     }
+  }
+  .f-coctails__item {
+    color: $primary-mod-text-color;
+  }
+  .search-coctail__title {
+    color: $primary-mod-text-color;
   }
 }
 
