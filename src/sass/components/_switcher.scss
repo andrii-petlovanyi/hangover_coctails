@@ -153,6 +153,13 @@
   .header__fav-arrow {
     fill: $accent-mod-text-color;
   }
+
+  .header__favorite__link {
+    &:hover .header__fav-arrow,
+    &:focus .header__fav-arrow {
+      fill: $primary-white-color;
+    }
+  }
 }
 
 $switch-width: 64px;
