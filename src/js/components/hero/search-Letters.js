@@ -1,7 +1,7 @@
 import { getCoctByFirstLet } from '../../api';
 import { notFound } from '../error';
 import sprite from '../../../images/svg/sprite.svg';
-import { initPagination } from '../pagination';
+import { initPagination, container } from '../pagination';
 import { refLetterSeList } from '../refs';
 
 const FAV_COCKTAIL = 'favourites_coctails';
@@ -27,9 +27,9 @@ async function addMarkup(letter) {
   try {
     const { data } = await getCoctByFirstLet(letter);
     if (!data.drinks) {
+      container.innerHTML = '';
       return renderError(notFound);
     }
-    // renderMarkup(data.drinks);
     initPagination(data.drinks, renderMarkup);
   } catch (error) {}
 }
