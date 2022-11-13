@@ -195,6 +195,10 @@
 
 .ingredients__items {
   cursor: pointer;
+  &:hover,
+  &:focus {
+    color: $accent-mod-text-color;
+  }
 }
 
 .button {
