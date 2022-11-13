@@ -78,10 +78,13 @@
 
   background-color: transparent;
 
+  transition: transform 250ms ease;
+
   &:hover,
   &:focus {
     cursor: pointer;
     fill: $accent-mod-text-color;
+    transform: scale(0.9);
   }
 }
 

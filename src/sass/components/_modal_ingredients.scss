@@ -146,6 +146,14 @@
   color: $primary-white-color;
 
   border-radius: 5px;
+
+  transition: transform 250ms ease;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 }
 
 .modal__button--favorite--ingredients {

@@ -223,10 +223,12 @@
   align-items: center;
   text-align: center;
   color: $primary-mod-text-color;
+  // transition: transform 250ms ease;
 
   &:hover,
   &:focus {
     cursor: pointer;
+    // transform: scale(1.02);
   }
   @media screen and (max-width: $tablet) {
     // font-size: 14px;

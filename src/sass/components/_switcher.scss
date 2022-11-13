@@ -222,6 +222,11 @@ $switch-animation-duration: 1s;
   border-radius: inherit;
   z-index: 1;
   transition: background $switch-animation-duration;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .switch__marker {

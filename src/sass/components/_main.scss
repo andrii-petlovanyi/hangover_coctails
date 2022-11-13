@@ -66,12 +66,13 @@
   background-color: $primary-white-color;
   border-radius: 5px 5px 0 0;
   @media screen and (min-width: $tablet) {
+    // width: 100%;
     width: 333px;
     height: 395px;
   }
   @media screen and (min-width: $desktop) {
     width: 393px;
-    height: 395px;
+    height: 380px;
   }
 }
 .coctail-card__options {
@@ -130,6 +131,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+  transition: transform 250ms ease;
   @media screen and (min-width: $tablet) {
     margin-right: 12px;
     width: 160px;
@@ -149,6 +151,7 @@
   &:hover,
   &:focus {
     cursor: pointer;
+    transform: scale(1.02);
   }
 }
 .button-add_to,
@@ -165,6 +168,8 @@
   font-size: 14px;
   line-height: 1.7;
   color: $accent-mod-text-color;
+  transition: transform 250ms ease;
+
   @media screen and (min-width: $tablet) {
     width: 123px;
     height: 48px;
@@ -183,6 +188,7 @@
   &:hover,
   &:focus {
     cursor: pointer;
+    transform: scale(1.02);
   }
 }
 

@@ -47,7 +47,7 @@ export function renderMarkup(data = []) {
           </svg>
         </button>`;
       return `<li class="coctail-card">
-      <img class="img lazyload" src="${placeholder}" data-srcset=${strDrinkThumb} alt=${strDrink}/img>
+      <img class="img lazyload" src="${placeholder}" data-srcset=${strDrinkThumb} alt=${strDrink}>
       <h3 class="coctail-card__name">${strDrink}</h3>
       <div class="coctail-card__options">
         <button class="button-learn_more" data-id=${idDrink} data-type="learn">Learn more</button>
