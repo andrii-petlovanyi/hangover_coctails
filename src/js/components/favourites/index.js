@@ -7,6 +7,8 @@ import { searchCoctById } from '../modal';
 import { errorListFavCocktail } from '../../templates';
 import { initPagination } from '../pagination';
 import { refFormSearch, refCocktList, refFormSearch } from '../refs';
+import placeholder from '../../../images/placeholder.gif';
+import 'lazysizes';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
 refFormSearch.addEventListener('submit', searchCockt);
@@ -37,7 +39,7 @@ export function renderMarkupList(data = []) {
   const mark = data
     .map(({ strDrink, strDrinkThumb, idDrink }) => {
       return `<li class="coctail-card">
-      <img class="img" src=${strDrinkThumb} alt=${strDrink}/img>
+      <img class="img lazyload" src="${placeholder}" data-srcset=${strDrinkThumb} alt=${strDrink}/img>
       <h3 class="coctail-card__name">${strDrink}</h3>
       <div class="coctail-card__options">
         <button class="button-learn_more" data-id=${idDrink} data-type="learn">Learn more</button>

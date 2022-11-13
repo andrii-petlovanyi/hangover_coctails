@@ -3,6 +3,8 @@ import { notFound } from '../error';
 import sprite from '../../../images/svg/sprite.svg';
 import { initPagination, container } from '../pagination';
 import { refLetterSeList } from '../refs';
+import placeholder from '../../../images/placeholder.gif';
+import 'lazysizes';
 
 const FAV_COCKTAIL = 'favourites_coctails';
 export const lettersListRef = refLetterSeList;
@@ -66,7 +68,7 @@ function renderMarkup(data = []) {
           </button>`;
 
       return `<li class="coctail-card">
-        <img class="img" src=${strDrinkThumb} alt=${strDrink}/img>
+              <img class="img lazyload" src="${placeholder}" data-srcset=${strDrinkThumb} alt=${strDrink}/img>
         <h3 class="coctail-card__name">${strDrink}</h3>
         <div class="coctail-card__options">
           <button class="button-learn_more" data-id=${idDrink} data-type="learn">Learn more</button>
