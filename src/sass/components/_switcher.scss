@@ -55,13 +55,22 @@
     color: $accent-mod-text-color;
   }
 
-  .cocktails__link {
+  .header__cocktails__item {
     color: white;
     background-color: black;
+
+    &:hover {
+      background-color: $accent-mod-text-color;
+    }
   }
 
-  .ingredients__link {
+  .header__ingredients__item {
     color: white;
+    background-color: black;
+
+    &:hover {
+      background-color: $accent-mod-text-color;
+    }
   }
 
   .coctail-card__name {
@@ -118,6 +127,10 @@
 
   .menu__mobile.open {
     background-color: black;
+  }
+
+  .shadow {
+    box-shadow: 0px 10px 10px -10px $accent-mod-text-color;
   }
 }
 
