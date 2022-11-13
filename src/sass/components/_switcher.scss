@@ -44,8 +44,8 @@
 }
 
 [data-theme='dark'] {
-  background-color: black;
-  color: white;
+  background-color: $primary-black-color;
+  color: $primary-white-color;
 
   .switcher__light {
     color: $primary-mod-text-color;
@@ -56,8 +56,8 @@
   }
 
   .header__cocktails__item {
-    color: white;
-    background-color: black;
+    color: $primary-white-color;
+    background-color: $primary-black-color;
 
     &:hover {
       background-color: $accent-mod-text-color;
@@ -65,8 +65,8 @@
   }
 
   .header__ingredients__item {
-    color: white;
-    background-color: black;
+    color: $primary-white-color;
+    background-color: $primary-black-color;
 
     &:hover {
       background-color: $accent-mod-text-color;
@@ -74,39 +74,42 @@
   }
 
   .coctail-card__name {
-    color: white;
+    color: $primary-white-color;
   }
 
   .hero__search {
-    color: white;
+    color: $primary-white-color;
   }
 
   .main-title {
-    color: white;
+    color: $primary-white-color;
   }
 
   .button-add_to {
-    background-color: black;
+    background-color: $primary-black-color;
   }
 
   .heart-icon {
-    fill: black;
+    fill: $primary-black-color;
   }
 
   .modal {
     color: white;
-    background-color: black;
+    background-color: $primary-black-color;
   }
 
   .modal__close {
-    fill: white;
+    fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .button-remove {
-    background-color: black;
+    background-color: $primary-black-color;
   }
   .ingredients__name {
-    color: white;
+    color: $primary-white-color;
   }
 
   .ingredients__type {
@@ -114,32 +117,49 @@
   }
 
   .modal--ingredient {
-    background-color: black;
+    background-color: $primary-black-color;
   }
 
   .menu__icon {
-    fill: white;
+    fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .close__icon {
-    fill: white;
+    fill: $primary-white-color;
+    &:hover {
+      fill: $accent-mod-text-color;
+    }
   }
 
   .menu__mobile.open {
-    background-color: black;
+    background-color: $primary-black-color;
   }
 
   .shadow {
     box-shadow: 0px 10px 10px -10px $accent-mod-text-color;
   }
-}
 
-[data-theme='dark-text'] {
-  color: white;
-}
+  .f_ingredients__title {
+    color: $primary-white-color;
+  }
 
-[data-theme='dark-back'] {
-  background-color: black;
+  .f-coctails__title {
+    color: $primary-white-color;
+  }
+
+  .header__fav-arrow {
+    fill: $accent-mod-text-color;
+  }
+
+  .header__favorite__link {
+    &:hover .header__fav-arrow,
+    &:focus .header__fav-arrow {
+      fill: $primary-white-color;
+    }
+  }
 }
 
 $switch-width: 64px;
