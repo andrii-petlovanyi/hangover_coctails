@@ -14,16 +14,18 @@
     <script type="module" src="./js/components/favourites/index.js"></script>
   </head>
   <body>
-    <include src="./partials/_header.html"></include>
-    <main>
-      <section class="f-coctails">
-        <div class="container f-coctails__container">
-          <h1 class="f-coctails__title">Favorite cocktails</h1>
-          <ul class="coctails-list js-add_f-coctail"></ul>
-        </div>
-        <div class="js-pagination"></div>
-      </section>
-    </main>
-    <include src="./partials/_footer.html"></include>
+    <div class="wrapper">
+      <include src="./partials/_header.html"></include>
+      <main>
+        <section class="f-coctails">
+          <div class="container f-coctails__container">
+            <h1 class="f-coctails__title">Favorite cocktails</h1>
+            <ul class="coctails-list js-add_f-coctail"></ul>
+          </div>
+          <div class="js-pagination"></div>
+        </section>
+      </main>
+      <include src="./partials/_footer.html"></include>
+    </div>
   </body>
 </html>
