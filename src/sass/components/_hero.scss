@@ -313,3 +313,15 @@
     pointer-events: none;
   }
 }
+
+.menu__icon {
+  &:hover {
+    fill: $accent-mod-text-color;
+  }
+}
+
+.close__icon {
+  &:hover {
+    fill: $accent-mod-text-color;
+  }
+}
