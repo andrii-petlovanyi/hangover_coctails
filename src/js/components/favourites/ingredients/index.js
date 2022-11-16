@@ -6,7 +6,12 @@ import { themeSwitcher } from '../../switcher/switcher';
 import { searchIngrByName } from '../../modal/modalIngr';
 import { initPagination } from '../../pagination';
 
-import { refIngrList, refFormSearch, refFormSearch } from '../../refs';
+import {
+  refIngrList,
+  refFormSearch,
+  refFormSearch,
+  refCocktList,
+} from '../../refs';
 import { errorListFavCocktail } from '../../../templates';
 
 const actArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
@@ -36,6 +41,7 @@ if (actArr.length) {
 
 function reRenderIngrCard() {
   const newArr = JSON.parse(localStorage.getItem(FAV_INGREDIENTS)) || [];
+  if (!newArr.length) return (refIngrList.innerHTML = errorListFavCocktail);
   initPagination(newArr, renderMarkup);
 }
 

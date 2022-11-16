@@ -73,7 +73,8 @@ function deleteFavFromLS(id) {
 }
 
 export function reRenderCards() {
-  newArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  const newArr = JSON.parse(localStorage.getItem(FAV_COCKTAIL)) || [];
+  if (!newArr.length) return (refCocktList.innerHTML = errorListFavCocktail);
   initPagination(newArr, renderMarkupList);
 }
 
